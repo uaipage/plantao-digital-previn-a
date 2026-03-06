@@ -1,95 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 195 30% 96%;
+    --foreground: 210 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 175 60% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 195 25% 90%;
+    --secondary-foreground: 210 30% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 195 15% 92%;
+    --muted-foreground: 210 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 90% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --hospital-teal: 175 60% 35%;
+    --hospital-dark: 210 30% 15%;
+    --hospital-light: 195 30% 96%;
+    --hospital-blue: 200 70% 50%;
+    --hospital-warm: 35 90% 55%;
+
+    --border: 195 20% 88%;
+    --input: 195 20% 88%;
+    --ring: 175 60% 35%;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -100,6 +62,141 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
   }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .hospital-screen {
+    @apply bg-card rounded-lg shadow-2xl border border-border overflow-hidden;
+  }
+
+  .hospital-header {
+    @apply bg-primary text-primary-foreground px-6 py-3 flex items-center gap-3;
+  }
+
+  .hospital-btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-200 hover:opacity-90 active:scale-[0.98]
+           shadow-md hover:shadow-lg;
+  }
+
+  .hospital-btn-accent {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold
+           transition-all duration-200 hover:opacity-90 active:scale-[0.98]
+           shadow-md hover:shadow-lg;
+  }
+
+  .hospital-card {
+    @apply bg-card rounded-xl border border-border p-5 shadow-sm
+           transition-all duration-200 hover:shadow-md;
+  }
+
+  .patient-card {
+    @apply hospital-card cursor-pointer hover:border-primary/50 hover:shadow-primary/10;
+  }
+
+  .letter-slot {
+    @apply w-10 h-12 rounded-lg border-2 border-primary/30 flex items-center justify-center
+           font-mono text-xl font-bold text-primary bg-primary/5;
+  }
+
+  .letter-slot-filled {
+    @apply border-primary bg-primary/15 text-primary;
+  }
+
+  .letter-slot-empty {
+    @apply border-muted-foreground/20 text-muted-foreground/30;
+  }
+
+  .option-card {
+    @apply hospital-card cursor-pointer border-2 border-transparent
+           hover:border-primary/40 transition-all;
+  }
+
+  .option-card-selected {
+    @apply border-primary bg-primary/5;
+  }
+
+  .option-card-correct {
+    @apply border-success bg-success/10;
+  }
+
+  .option-card-wrong {
+    @apply border-destructive bg-destructive/10;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full bg-muted overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-primary transition-all duration-500;
+  }
+
+  .laptop-frame {
+    @apply relative mx-auto;
+    max-width: 1100px;
+    perspective: 1200px;
+  }
+
+  .laptop-screen-inner {
+    @apply bg-card rounded-t-xl overflow-hidden shadow-inner;
+    min-height: 600px;
+    max-height: 75vh;
+  }
+
+  .braden-cell {
+    @apply p-2 text-center text-sm border border-border cursor-pointer
+           transition-colors hover:bg-primary/10;
+  }
+
+  .braden-cell-selected {
+    @apply bg-primary/20 font-semibold text-primary;
+  }
+
+  .product-chip {
+    @apply px-4 py-2 rounded-full border-2 border-border bg-card text-sm font-medium
+           cursor-pointer transition-all hover:border-primary/50 hover:bg-primary/5;
+  }
+
+  .product-chip-selected {
+    @apply border-primary bg-primary/15 text-primary;
+  }
+}
+
+/* Custom scrollbar */
+.laptop-screen-inner::-webkit-scrollbar {
+  width: 6px;
+}
+.laptop-screen-inner::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+.laptop-screen-inner::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
 }
