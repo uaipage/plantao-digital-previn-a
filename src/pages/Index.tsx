@@ -105,6 +105,18 @@ const Index = () => {
           />
         );
 
+      case "phase2-transition":
+        return (
+          <Phase2TransitionScreen
+            phase2BradenInputs={state.phase2BradenInputs}
+            onBack={() => goTo("dashboard")}
+            onContinuePhase3={() => {
+              setPhase(3);
+              goTo("dashboard");
+            }}
+          />
+        );
+
       case "phase3-patient":
         if (!currentPatient) return null;
         return (

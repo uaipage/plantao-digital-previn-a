@@ -130,7 +130,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
         })}
       </div>
 
-      {/* Vault button */}
+      {/* Vault button (Phase 1) */}
       {allPhase1Done && phase === 1 && (
         <div className="flex justify-center mt-8">
           <button
@@ -138,6 +138,19 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
             className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
           >
             🔐 Abrir o Cofre
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+      {/* Phase 2 transition button */}
+      {allPhase2Done && phase === 2 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={onGoToPhase2Transition}
+            className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
+          >
+            📊 Consolidar Scores de Braden
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
