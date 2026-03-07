@@ -47,6 +47,7 @@ const Index = () => {
             collectedLetters={collectedLetters}
             onSelectPatient={(id) => goTo("case", id)}
             onGoToVault={() => goTo("vault")}
+            onGoToPhase2Transition={() => goTo("phase2-transition")}
             phase={state.phase}
             onChangePhase={(p) => {
               setPhase(p);
