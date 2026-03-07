@@ -8,6 +8,7 @@ interface DashboardScreenProps {
   collectedLetters: (string | null)[];
   onSelectPatient: (id: number) => void;
   onGoToVault: () => void;
+  onGoToPhase2Transition: () => void;
   phase: 1 | 2 | 3;
   onChangePhase: (phase: 1 | 2 | 3) => void;
   phase2Completed: Set<number>;
