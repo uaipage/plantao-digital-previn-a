@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Lock, Unlock, ArrowLeft, PartyPopper } from "lucide-react";
-import LetterTracker from "./LetterTracker";
 
 interface VaultScreenProps {
   collectedLetters: (string | null)[];

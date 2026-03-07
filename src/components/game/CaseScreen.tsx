@@ -78,7 +78,7 @@ const CaseScreen: React.FC<CaseScreenProps> = ({
             {patient.options.map((option, i) => {
               let cardClass = "option-card";
               if (showFeedback) {
-                if (i === patient.correctAnswer) cardClass = "option-card option-card-correct";
+                if (isCorrect && i === patient.correctAnswer) cardClass = "option-card option-card-correct";
                 else if (i === selectedOption && !isCorrect) cardClass = "option-card option-card-wrong";
               } else if (selectedOption === i) {
                 cardClass = "option-card option-card-selected";
