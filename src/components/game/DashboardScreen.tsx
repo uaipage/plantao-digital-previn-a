@@ -22,6 +22,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
   collectedLetters,
   onSelectPatient,
   onGoToVault,
+  onGoToPhase2Transition,
   phase,
   onChangePhase,
   phase2Completed,
