@@ -9,6 +9,7 @@ import CaseScreen from "@/components/game/CaseScreen";
 import VaultScreen from "@/components/game/VaultScreen";
 import BradenScreen from "@/components/game/BradenScreen";
 import TreatmentScreen from "@/components/game/TreatmentScreen";
+import Phase2TransitionScreen from "@/components/game/Phase2TransitionScreen";
 import CompleteScreen from "@/components/game/CompleteScreen";
 
 const Index = () => {
