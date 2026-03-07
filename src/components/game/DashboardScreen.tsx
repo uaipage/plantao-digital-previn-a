@@ -8,6 +8,7 @@ interface DashboardScreenProps {
   collectedLetters: (string | null)[];
   onSelectPatient: (id: number) => void;
   onGoToVault: () => void;
+  onGoToPhase2Transition: () => void;
   phase: 1 | 2 | 3;
   onChangePhase: (phase: 1 | 2 | 3) => void;
   phase2Completed: Set<number>;
@@ -21,6 +22,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
   collectedLetters,
   onSelectPatient,
   onGoToVault,
+  onGoToPhase2Transition,
   phase,
   onChangePhase,
   phase2Completed,
@@ -128,7 +130,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
         })}
       </div>
 
-      {/* Vault button */}
+      {/* Vault button (Phase 1) */}
       {allPhase1Done && phase === 1 && (
         <div className="flex justify-center mt-8">
           <button
@@ -136,6 +138,19 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
             className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
           >
             🔐 Abrir o Cofre
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+      {/* Phase 2 transition button */}
+      {allPhase2Done && phase === 2 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={onGoToPhase2Transition}
+            className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
+          >
+            📊 Consolidar Scores de Braden
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

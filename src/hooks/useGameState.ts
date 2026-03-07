@@ -9,6 +9,7 @@ export type GameScreen =
   | "vault"
   | "phase2"
   | "phase2-patient"
+  | "phase2-transition"
   | "phase3"
   | "phase3-patient"
   | "complete";

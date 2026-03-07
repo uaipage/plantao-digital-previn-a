@@ -9,6 +9,7 @@ import CaseScreen from "@/components/game/CaseScreen";
 import VaultScreen from "@/components/game/VaultScreen";
 import BradenScreen from "@/components/game/BradenScreen";
 import TreatmentScreen from "@/components/game/TreatmentScreen";
+import Phase2TransitionScreen from "@/components/game/Phase2TransitionScreen";
 import CompleteScreen from "@/components/game/CompleteScreen";
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
             collectedLetters={collectedLetters}
             onSelectPatient={(id) => goTo("case", id)}
             onGoToVault={() => goTo("vault")}
+            onGoToPhase2Transition={() => goTo("phase2-transition")}
             phase={state.phase}
             onChangePhase={(p) => {
               setPhase(p);
@@ -100,6 +102,18 @@ const Index = () => {
             onSetInput={(cat, score) => setBradenInput(currentPatient.id, cat, score)}
             onConfirm={() => confirmBraden(currentPatient.id)}
             onBack={() => goTo("dashboard")}
+          />
+        );
+
+      case "phase2-transition":
+        return (
+          <Phase2TransitionScreen
+            phase2BradenInputs={state.phase2BradenInputs}
+            onBack={() => goTo("dashboard")}
+            onContinuePhase3={() => {
+              setPhase(3);
+              goTo("dashboard");
+            }}
           />
         );
 

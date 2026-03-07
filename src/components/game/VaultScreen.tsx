@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Lock, Unlock, ArrowLeft, PartyPopper } from "lucide-react";
-import LetterTracker from "./LetterTracker";
 
 interface VaultScreenProps {
   collectedLetters: (string | null)[];
@@ -21,6 +20,18 @@ const VaultScreen: React.FC<VaultScreenProps> = ({
   onBack,
   onContinuePhase2,
 }) => {
+  // Scramble collected letters so they don't reveal the answer
+  const scrambledLetters = useMemo(() => {
+    const filled = collectedLetters.filter((l): l is string => l !== null);
+    // Fisher-Yates shuffle
+    const shuffled = [...filled];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, [collectedLetters]);
+
   return (
     <div className="p-8 animate-fadeIn">
       <div className="hospital-header rounded-t-lg -mx-8 -mt-8 mb-8">
@@ -54,7 +65,17 @@ const VaultScreen: React.FC<VaultScreenProps> = ({
             </div>
 
             <div className="mb-4">
-              <LetterTracker collectedLetters={collectedLetters} />
+              <p className="text-xs font-medium text-muted-foreground mb-2">Letras coletadas (embaralhadas):</p>
+              <div className="flex items-center justify-center gap-2">
+                {scrambledLetters.map((letter, i) => (
+                  <div
+                    key={i}
+                    className="letter-slot text-sm w-8 h-9 letter-slot-filled"
+                  >
+                    {letter}
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>
