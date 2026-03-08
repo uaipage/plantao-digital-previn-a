@@ -16,7 +16,7 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onNext }) => {
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Plantão Noturno
+            Passagem de Plantão
           </h1>
           <p className="text-muted-foreground">Unidade de Clínica Médica</p>
         </div>
