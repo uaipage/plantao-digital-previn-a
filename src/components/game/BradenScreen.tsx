@@ -43,10 +43,24 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
           <p className="text-sm text-muted-foreground">{patient.diagnosis}</p>
         </div>
 
-        {/* SBAR summary */}
-        <div className="hospital-card text-sm text-foreground">
-          <p><strong>Situação:</strong> {patient.sbar.situation}</p>
-          <p className="mt-1"><strong>Avaliação:</strong> {patient.sbar.assessment}</p>
+        {/* SBAR */}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="hospital-card">
+            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">S — Situação</h4>
+            <p className="text-sm text-foreground">{patient.sbar.situation}</p>
+          </div>
+          <div className="hospital-card">
+            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">B — Background</h4>
+            <p className="text-sm text-foreground">{patient.sbar.background}</p>
+          </div>
+          <div className="hospital-card">
+            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">A — Avaliação</h4>
+            <p className="text-sm text-foreground">{patient.sbar.assessment}</p>
+          </div>
+          <div className="hospital-card">
+            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">R — Recomendação</h4>
+            <p className="text-sm text-foreground">{patient.sbar.recommendation}</p>
+          </div>
         </div>
 
         {/* Braden categories */}
