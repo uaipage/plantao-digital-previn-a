@@ -18,9 +18,9 @@ import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.p
 import imgJoaquim from "@/assets/pacientes/Joaquim.jpg";
 import imgLucinda from "@/assets/pacientes/Lucinda.png";
 import imgMaria from "@/assets/pacientes/Maria.png";
-import imgOtavio from "@/assets/pacientes/Otávio.png";
+import imgOtavio from "@/assets/pacientes/Otavio.png";
 import imgManoel from "@/assets/pacientes/Manoel.png";
-import imgAntonia from "@/assets/pacientes/Antônia.png";
+import imgAntonia from "@/assets/pacientes/Antonia.png";
 
 const PATIENT_IMAGES: Record<number, string> = {
   201: imgJoaquim,
