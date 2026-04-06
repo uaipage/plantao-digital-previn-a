@@ -89,6 +89,13 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
         </div>
       </div>
 
+      {/* Phase 2 instruction */}
+      {phase === 2 && (
+        <div className="mb-6 p-4 rounded-lg bg-accent/50 border border-accent text-sm text-foreground">
+          📋 Neste nível você irá calcular a escala de risco de Braden para cada paciente, mas fique atento aos números, eles serão utilizados ao final do nível.
+        </div>
+      )}
+
       {/* Patient cards */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {patients.map(patient => {
