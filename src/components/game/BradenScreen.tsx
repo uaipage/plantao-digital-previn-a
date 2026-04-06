@@ -1,13 +1,16 @@
 import React, { useMemo } from "react";
 import { PatientCase, BRADEN_CATEGORIES, getBradenRisk } from "@/data/gameData";
-import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 
 interface BradenScreenProps {
   patient: PatientCase;
   inputs: Record<string, number>;
   isCompleted: boolean;
+  showFeedback: boolean;
+  isCorrect: boolean;
   onSetInput: (category: string, score: number) => void;
   onConfirm: () => void;
+  onRetry: () => void;
   onBack: () => void;
 }
 
@@ -15,8 +18,11 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
   patient,
   inputs,
   isCompleted,
+  showFeedback,
+  isCorrect,
   onSetInput,
   onConfirm,
+  onRetry,
   onBack,
 }) => {
   const total = useMemo(() => {
@@ -72,13 +78,13 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
                 {cat.levels.map(level => {
                   const selected = inputs[cat.key] === level.score;
                   const isCorrectAnswer = level.score === patient.braden[cat.key];
-                  const showCorrect = isCompleted && selected && isCorrectAnswer;
-                  const showWrong = isCompleted && selected && !isCorrectAnswer;
+                  const showCorrect = showFeedback && selected && isCorrectAnswer;
+                  const showWrong = showFeedback && selected && !isCorrectAnswer;
 
                   return (
                     <button
                       key={level.score}
-                      onClick={() => !isCompleted && onSetInput(cat.key, level.score)}
+                      onClick={() => !showFeedback && onSetInput(cat.key, level.score)}
                       className={`text-left p-2 rounded-lg border text-xs transition-colors flex-1 min-w-[120px] ${
                         showCorrect ? "border-success bg-success/10" :
                         showWrong ? "border-destructive bg-destructive/10" :
@@ -109,24 +115,21 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
           </div>
           {isCompleted && (
             <div className="flex items-center gap-2">
-              {isAllCorrect ? (
-                <>
-                  <CheckCircle2 className="w-5 h-5 text-success" />
-                  <span className="text-success font-semibold text-sm">Correto!</span>
-                </>
-              ) : (
-                <>
-                  <XCircle className="w-5 h-5 text-accent" />
-                  <span className="text-foreground text-sm">
-                    Resposta correta: {patient.braden.total} ({patient.braden.risk})
-                  </span>
-                </>
-              )}
+              <CheckCircle2 className="w-5 h-5 text-success" />
+              <span className="text-success font-semibold text-sm">Correto!</span>
+            </div>
+          )}
+          {showFeedback && !isCorrect && (
+            <div className="flex items-center gap-2">
+              <XCircle className="w-5 h-5 text-accent" />
+              <span className="text-foreground text-sm">
+                Resposta correta: {patient.braden.total} ({patient.braden.risk})
+              </span>
             </div>
           )}
         </div>
 
-        {!isCompleted && (
+        {!showFeedback && (
           <div className="flex justify-center">
             <button
               onClick={onConfirm}
@@ -135,6 +138,26 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
             >
               Confirmar Avaliação
             </button>
+          </div>
+        )}
+
+        {showFeedback && !isCorrect && (
+          <div className="space-y-3">
+            <div className="hospital-card border-l-4 border-l-destructive">
+              <div className="flex items-start gap-3">
+                <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="text-sm">
+                  <p className="font-bold text-foreground mb-1">Avaliação Incorreta</p>
+                  <p className="text-foreground">Alguns valores da Escala de Braden estão incorretos. Revise as categorias marcadas em vermelho e tente novamente.</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <button onClick={onRetry} className="hospital-btn-primary flex items-center gap-2">
+                <RotateCcw className="w-4 h-4" />
+                Tentar novamente
+              </button>
+            </div>
           </div>
         )}
 

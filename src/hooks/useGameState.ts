@@ -29,6 +29,10 @@ export interface GameState {
   vaultSuccess: boolean;
   phase2BradenInputs: Record<number, Record<string, number>>;
   phase3Selections: Record<number, string[]>;
+  phase2ShowFeedback: Record<number, boolean>;
+  phase2IsCorrect: Record<number, boolean>;
+  phase3ShowFeedback: Record<number, boolean>;
+  phase3IsCorrect: Record<number, boolean>;
 }
 
 export function useGameState() {
@@ -47,6 +51,10 @@ export function useGameState() {
     vaultSuccess: false,
     phase2BradenInputs: {},
     phase3Selections: {},
+    phase2ShowFeedback: {},
+    phase2IsCorrect: {},
+    phase3ShowFeedback: {},
+    phase3IsCorrect: {},
   });
 
   const goTo = useCallback((screen: GameScreen, patientId?: number) => {
@@ -139,10 +147,32 @@ export function useGameState() {
 
   const confirmBraden = useCallback((patientId: number) => {
     setState(prev => {
+      const patient = patients.find(p => p.id === patientId);
+      if (!patient) return prev;
+      const inputs = prev.phase2BradenInputs[patientId] || {};
+      const isCorrect = ["sensoryPerception", "moisture", "activity", "mobility", "nutrition", "frictionShear"]
+        .every(key => inputs[key] === patient.braden[key as keyof typeof patient.braden]);
+
       const newCompleted = new Set(prev.phase2Completed);
-      newCompleted.add(patientId);
-      return { ...prev, phase2Completed: newCompleted };
+      if (isCorrect) {
+        newCompleted.add(patientId);
+      }
+      return {
+        ...prev,
+        phase2Completed: newCompleted,
+        phase2ShowFeedback: { ...prev.phase2ShowFeedback, [patientId]: true },
+        phase2IsCorrect: { ...prev.phase2IsCorrect, [patientId]: isCorrect },
+      };
     });
+  }, []);
+
+  const retryBraden = useCallback((patientId: number) => {
+    setState(prev => ({
+      ...prev,
+      phase2BradenInputs: { ...prev.phase2BradenInputs, [patientId]: {} },
+      phase2ShowFeedback: { ...prev.phase2ShowFeedback, [patientId]: false },
+      phase2IsCorrect: { ...prev.phase2IsCorrect, [patientId]: false },
+    }));
   }, []);
 
   const togglePhase3Product = useCallback((patientId: number, product: string) => {
@@ -163,10 +193,37 @@ export function useGameState() {
 
   const confirmPhase3 = useCallback((patientId: number) => {
     setState(prev => {
+      const patient = patients.find(p => p.id === patientId);
+      if (!patient) return prev;
+      const selected = prev.phase3Selections[patientId] || [];
+      const hasAllCorrect = patient.correctTreatments.every(t =>
+        selected.some(s => s.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.toLowerCase()))
+      );
+      const hasNoExtra = selected.every(s =>
+        patient.correctTreatments.some(t => s.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.toLowerCase()))
+      );
+      const isCorrect = hasAllCorrect && hasNoExtra;
+
       const newCompleted = new Set(prev.phase3Completed);
-      newCompleted.add(patientId);
-      return { ...prev, phase3Completed: newCompleted };
+      if (isCorrect) {
+        newCompleted.add(patientId);
+      }
+      return {
+        ...prev,
+        phase3Completed: newCompleted,
+        phase3ShowFeedback: { ...prev.phase3ShowFeedback, [patientId]: true },
+        phase3IsCorrect: { ...prev.phase3IsCorrect, [patientId]: isCorrect },
+      };
     });
+  }, []);
+
+  const retryPhase3 = useCallback((patientId: number) => {
+    setState(prev => ({
+      ...prev,
+      phase3Selections: { ...prev.phase3Selections, [patientId]: [] },
+      phase3ShowFeedback: { ...prev.phase3ShowFeedback, [patientId]: false },
+      phase3IsCorrect: { ...prev.phase3IsCorrect, [patientId]: false },
+    }));
   }, []);
 
   const setPhase = useCallback((phase: 1 | 2 | 3) => {
@@ -184,8 +241,10 @@ export function useGameState() {
     checkVault,
     setBradenInput,
     confirmBraden,
+    retryBraden,
     togglePhase3Product,
     confirmPhase3,
+    retryPhase3,
     setPhase,
   };
 }

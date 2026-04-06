@@ -1,6 +1,6 @@
 import React from "react";
 import { PatientCase, TREATMENT_PRODUCTS } from "@/data/gameData";
-import { ArrowLeft, CheckCircle2, ShoppingCart } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ShoppingCart, XCircle, RotateCcw } from "lucide-react";
 
 import imgAGE from "@/assets/tratamentos/AGE.png";
 import imgAlginatoDeCálcio from "@/assets/tratamentos/Alginato_de_calcio.png";
@@ -51,8 +51,11 @@ interface TreatmentScreenProps {
   patient: PatientCase;
   selectedProducts: string[];
   isCompleted: boolean;
+  showFeedback: boolean;
+  isCorrect: boolean;
   onToggleProduct: (product: string) => void;
   onConfirm: () => void;
+  onRetry: () => void;
   onBack: () => void;
 }
 
@@ -60,14 +63,13 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
   patient,
   selectedProducts,
   isCompleted,
+  showFeedback,
+  isCorrect,
   onToggleProduct,
   onConfirm,
+  onRetry,
   onBack,
 }) => {
-  const hasCorrectProducts = patient.correctTreatments.every(t =>
-    selectedProducts.some(s => s.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.toLowerCase()))
-  );
-
   return (
     <div className="p-6 animate-fadeIn">
       <div className="hospital-header rounded-t-lg -mx-6 -mt-6 mb-6">
@@ -98,7 +100,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               const image = PRODUCT_IMAGES[product];
 
               let chipClass = "product-chip flex flex-col items-center gap-2 p-3 h-auto";
-              if (isCompleted) {
+              if (showFeedback) {
                 if (isCorrectProduct) chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto";
                 else if (selected) chipClass = "product-chip border-destructive/50 bg-destructive/5 flex flex-col items-center gap-2 p-3 h-auto";
               } else if (selected) {
@@ -108,7 +110,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               return (
                 <button
                   key={product}
-                  onClick={() => !isCompleted && onToggleProduct(product)}
+                  onClick={() => !showFeedback && onToggleProduct(product)}
                   className={chipClass}
                 >
                   {image && (
@@ -150,8 +152,28 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
           </div>
         )}
 
-        <div className="flex justify-center">
-          {!isCompleted ? (
+        {showFeedback && !isCorrect && (
+          <div className="space-y-3">
+            <div className="hospital-card border-l-4 border-l-destructive">
+              <div className="flex items-start gap-3">
+                <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                <div className="text-sm">
+                  <p className="font-bold text-foreground mb-1">Tratamento Incorreto</p>
+                  <p className="text-foreground">Os produtos selecionados não estão corretos. Os produtos corretos estão destacados em verde. Revise e tente novamente.</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <button onClick={onRetry} className="hospital-btn-primary flex items-center gap-2">
+                <RotateCcw className="w-4 h-4" />
+                Tentar novamente
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!showFeedback && (
+          <div className="flex justify-center">
             <button
               onClick={onConfirm}
               disabled={selectedProducts.length === 0}
@@ -159,12 +181,16 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
             >
               Confirmar Tratamento
             </button>
-          ) : (
+          </div>
+        )}
+
+        {isCompleted && (
+          <div className="flex justify-center">
             <button onClick={onBack} className="hospital-btn-primary">
               Voltar ao Dashboard
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

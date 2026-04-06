@@ -24,8 +24,10 @@ const Index = () => {
     checkVault,
     setBradenInput,
     confirmBraden,
+    retryBraden,
     togglePhase3Product,
     confirmPhase3,
+    retryPhase3,
     setPhase,
   } = useGameState();
 
@@ -99,8 +101,11 @@ const Index = () => {
             patient={currentPatient}
             inputs={state.phase2BradenInputs[currentPatient.id] || {}}
             isCompleted={state.phase2Completed.has(currentPatient.id)}
+            showFeedback={state.phase2ShowFeedback[currentPatient.id] || false}
+            isCorrect={state.phase2IsCorrect[currentPatient.id] || false}
             onSetInput={(cat, score) => setBradenInput(currentPatient.id, cat, score)}
             onConfirm={() => confirmBraden(currentPatient.id)}
+            onRetry={() => retryBraden(currentPatient.id)}
             onBack={() => goTo("dashboard")}
           />
         );
@@ -124,8 +129,11 @@ const Index = () => {
             patient={currentPatient}
             selectedProducts={state.phase3Selections[currentPatient.id] || []}
             isCompleted={state.phase3Completed.has(currentPatient.id)}
+            showFeedback={state.phase3ShowFeedback[currentPatient.id] || false}
+            isCorrect={state.phase3IsCorrect[currentPatient.id] || false}
             onToggleProduct={(p) => togglePhase3Product(currentPatient.id, p)}
             onConfirm={() => confirmPhase3(currentPatient.id)}
+            onRetry={() => retryPhase3(currentPatient.id)}
             onBack={() => goTo("dashboard")}
           />
         );
