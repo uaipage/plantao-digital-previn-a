@@ -10,6 +10,7 @@ import VaultScreen from "@/components/game/VaultScreen";
 import BradenScreen from "@/components/game/BradenScreen";
 import TreatmentScreen from "@/components/game/TreatmentScreen";
 import Phase2TransitionScreen from "@/components/game/Phase2TransitionScreen";
+import Phase3TransitionScreen from "@/components/game/Phase3TransitionScreen";
 import CompleteScreen from "@/components/game/CompleteScreen";
 
 const Index = () => {
@@ -115,7 +116,15 @@ const Index = () => {
           <Phase2TransitionScreen
             phase2BradenInputs={state.phase2BradenInputs}
             onBack={() => goTo("dashboard")}
-            onContinuePhase3={() => {
+            onContinuePhase3={() => goTo("phase3-transition")}
+          />
+        );
+
+      case "phase3-transition":
+        return (
+          <Phase3TransitionScreen
+            onBack={() => goTo("dashboard")}
+            onContinue={() => {
               setPhase(3);
               goTo("dashboard");
             }}
