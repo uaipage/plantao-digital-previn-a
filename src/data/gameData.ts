@@ -364,10 +364,7 @@ export const TREATMENT_PRODUCTS = [
   "Hidrogel",
   "Óxido de Zinco",
   "PHMB (Polihexanida)",
-  "Sulfadiazina de Prata",
-  "Espuma de Poliuretano",
-  "Película Protetora",
-  "Curativo Absorvente",
+  "Sulfadiazina de Prata"
 ];
 
 export const BRADEN_CATEGORIES = [
