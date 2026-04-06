@@ -71,8 +71,9 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
               <div className="flex flex-wrap gap-2">
                 {cat.levels.map(level => {
                   const selected = inputs[cat.key] === level.score;
-                  const showCorrect = isCompleted && level.score === patient.braden[cat.key];
-                  const showWrong = isCompleted && selected && level.score !== patient.braden[cat.key];
+                  const isCorrectAnswer = level.score === patient.braden[cat.key];
+                  const showCorrect = isCompleted && selected && isCorrectAnswer;
+                  const showWrong = isCompleted && selected && !isCorrectAnswer;
 
                   return (
                     <button
