@@ -46,10 +46,10 @@ export const patients: PatientCase[] = [
     age: 77,
     diagnosis: "Pneumonia (PNM) + Insuficiência Respiratória Aguda (IRPA) - DPOC",
     sbar: {
-      situation: "DM2. Admitido hoje na unidade (após período na UTI). Ex-tabagista (8 anos/maço). Fratura de fêmur há 3 anos. Tendência à hiperglicemia.",
-      background: "Neurológico: Glasgow 13 (AO: 3/ RV: 4/ RM: 6). PIF+. Ventilação espontânea com suporte de Cateter Nasal de O2 a 2L/min; dispneia aos pequenos esforços.",
-      assessment: "Motor: Acamado, com força muscular grau IV em MMSS e grau III em MMII. Dor moderada à mobilização. Lesão de 3 cm com tecido necrótico seco na região auricular esquerda. CVP em dorso de mão E (J20). Baixa (<50%) aceitação de dieta pastosa VO. Eliminações intestinais presentes (pastosas) 2x 24h. Micção: papagaio e perdas em fralda.",
-      recommendation: "Vigilância do padrão respiratório e oximetria; controle rigoroso de glicemia capilar. Curativo na lesão auricular esquerda conforme protocolo."
+      situation: "Diagnóstico: Pneumonia (PNM) + Insuficiência Respiratória Aguda (IRPA). Tempo de Internação: 1 dia - Admitido hoje na unidade (após período na UTI). Lesão de 3 cm com tecido necrótico seco na região auricular esquerda. CVP em dorso de mão esquerda (J20), pérvio e com filme transparente, em uso de Meropenem 1g IV 8/8h (D6).",
+      background: "DM2. DPOC. Ex-tabagista (8 anos/maço). Fratura de fêmur E há 3 anos. Tendência à hiperglicemia.",
+      assessment: "Neurológico: Glasgow 13 (AO: 3/ RV: 4/ RM: 6). PIF+. Respiratório: Ventilação espontânea com suporte de Cateter Nasal de O2 a 2L/min; dispneia aos pequenos esforços. Motor: Acamado, com força muscular grau IV em membros superiores e grau III em membros inferiores. Refere dor moderada à mobilização. Gastro: Baixa aceitação de dieta pastosa via oral (<50%). Eliminações intestinais presentes (pastosas) 2x 24h. Micção: papagaio e perdas em fralda.",
+      recommendation: "Vigilância do padrão respiratório e oximetria; realizar controle rigoroso de glicemia capilar (HGT). Realizar curativo na lesão auricular esquerda conforme protocolo; auxílio total na mobilização no leito devido à dor e fraqueza muscular. Estimular aceitação da dieta e monitorar balanço hídrico/nutricional."
     },
     scenario: "O Sr. Joaquim está \"escorregando\" na cama a todo momento. O queixo encostando no peito. O cateter nasal está esticado, pressionando a parte superior da orelha. A fralda está úmida.",
     enigmaTitle: "Enigma: Posicionamento de dispositivos (\"P\")",
@@ -88,13 +88,13 @@ export const patients: PatientCase[] = [
     id: 202,
     bed: "Leito 202",
     name: "Lucinda Alves",
-    age: 68,
+    age: 51,
     diagnosis: "Acidente Vascular Cerebral Isquêmico (AVCi)",
     sbar: {
-      situation: "Encontrada em domicílio com tempo de início dos sintomas indeterminado (>12h). Tempo de Internação: 30 dias na unidade. Estável hemodinamicamente, afebril e em ar ambiente.",
-      background: "Neurológico: Glasgow 13 (AO: 4/ RV: 2/ RM: 6); PIF+. Disfagia. Hipodermóclise em coxa D (J22) permeabilizado. Jejum no momento, aguarda RX para liberação de sonda para alimentação.",
-      assessment: "Motor: Acamada e dependente; Hemiplegia à direita (FM 0) e FM grau IV à esquerda; dor à mobilização. Lesão em região sacral, cerca de 7cm em sua maior extensão, com esfacelos em centro e tecido de granulação ao redor, bordas irregulares, maceradas e sangrantes. Micção espontânea em fralda.",
-      recommendation: "Manter jejum rigoroso até a visualização/liberação do RX da sonda. Realizar curativo em região sacral conforme protocolo. Mudança de decúbito frequente com manejo da dor."
+      situation: "Diagnóstico: Acidente Vascular Cerebral Isquêmico (AVCi). Tempo de internação: 30 dias na unidade. Estável hemodinamicamente, afebril e em ar ambiente. Ventilação espontânea em ar ambiente. Lesão em região sacral, cerca de 7 cm em sua maior extensão, com esfacelos em centro e tecido de granulação ao redor, bordas irregulares e sangrantes. Hipodermóclise em coxa D (J22), permeabilizado. Jejum no momento, aguarda RX para liberação de sonda para alimentação. Sem antibioticoterapia no momento.",
+      background: "HAS. Encontrada em domicílio com tempo de início dos sintomas indeterminado (>12h). Sem antibioticoterapia no momento.",
+      assessment: "Neurológico: Glasgow 13 (AO: 4/ RV: 2/ RM: 6), PIF+. Motor: Acamada e dependente; hemiplegia à direita (FM 0) e FM grau IV à esquerda; dor à mobilização. Gastro: disfagia. Micção espontânea em fralda.",
+      recommendation: "Manter jejum rigoroso até a visualização/liberação do RX da sonda. Realizar curativo em região sacral conforme protocolo. Mudança de decúbito frequente com manejo da dor. Controle de eliminações (ausência de evacuação em 24h)."
     },
     scenario: "Lucinda está em jejum prolongado aguardando confirmação do posicionamento da sonda por RX. A lesão sacral precisa de atenção urgente.",
     enigmaTitle: "Enigma: Avaliação de Risco e Nutrição (\"A\" e \"N\")",
@@ -136,10 +136,10 @@ export const patients: PatientCase[] = [
     age: 64,
     diagnosis: "2° PO de hemicolectomia à D por CA de Cólon",
     sbar: {
-      situation: "Anemia diagnosticada (Hb 8,2 g/dL). Tempo de Internação: 3 dias. Febril, hemodinamicamente estável e em ar ambiente. Normoglicêmica.",
-      background: "Neurológico: Glasgow 14 (AO: 3/ RV: 5/ RM: 6); PIF+. CVP em antebraço E (J20) com Morfina 2mg/h via bomba de PCA.",
-      assessment: "Motor: Deambula ocasionalmente; dependência parcial. EVN 8 - Dor intensa. FO longitudinal em região supra-infraumbilical com vazamento, mantendo dreno de sucção (Portovac) em fossa ilíaca D, com débito serossanguinolento (240ml/24h). Baixa aceitação (<25%) de dieta geral VO. Evacuação ausente nas 24h. Micção espontânea em fralda.",
-      recommendation: "Agilizar coleta de hemoculturas e swab do dreno para iniciar antibioticoterapia. Reavaliar a eficácia da bomba de PCA com a equipe médica/anestesia."
+      situation: "Diagnóstico: 2º PO de hemicolectomia à D por CA de Cólon. Tempo de internação: 3 dias. Febril, hemodinamicamente estável e em ar ambiente. Normoglicêmica. CVP em antebraço E (J20) com Morfina 2mg/h via bomba de PCA. FO longitudinal em região supra-infraumbilical com vazamento, mantendo dreno de sucção (Portovac) em fossa ilíaca D, com débito serossanguinolento (240ml/24h).",
+      background: "Anemia diagnosticada (Hb 8,2 g/dL).",
+      assessment: "Neurológico: Glasgow 14 (AO: 3/ RV: 5/ RM: 6), PIF+. Motor: deambula ocasionalmente; dependência parcial para se movimentar. Gastro: baixa aceitação (<25%) de dieta geral VO; evacuação ausente nas 24h. Micção espontânea em fralda. EVN 8 - Dor intensa.",
+      recommendation: "Agilizar a coleta de 1 par de hemoculturas e do swab do dreno para iniciar antibioticoterapia imediatamente após. Reavaliar a eficácia da bomba de PCA com a equipe médica/anestesia, dado o escore de dor elevado. Curativo em FO abdominal e inserção de dreno."
     },
     scenario: "Ao entrar no quarto, você sente um cheiro característico. Maria está gemendo de dor (8/10). Ao levantar o lençol, a camisola está encharcada de suor e há vazamento de secreção sero-hemática do dreno Portovac, deixando a roupa de cama úmida.",
     enigmaTitle: "Enigma: Evitar a umidade (\"E\")",
@@ -181,10 +181,10 @@ export const patients: PatientCase[] = [
     age: 48,
     diagnosis: "Insuficiência Cardíaca Congestiva (ICC)",
     sbar: {
-      situation: "Obesidade Grau III (IMC 42). Ortopneia severa (intolerante total ao decúbito 0°). HAS, DM. Tempo de Internação: 1 dia. Hemodinamicamente estável e afebril.",
-      background: "Neurológico: Glasgow 15 (AO: 4/ RV: 5/ RM: 6); PIF+. CVP em face anterior de antebraço D (J22), permeabilizado. RH=1000ml/dia.",
-      assessment: "Motor: Permanece em cadeira (dependente parcial); FM III (MMII) e V (MMSS). Edema generalizado, especialmente em MMII. Hiperemia que não embranquece ao toque em região sacral. Dieta hipossódica via oral, com baixa aceitação. Micção espontânea em papagaio. Ventilação espontânea, AA com uso de CN de O2 2L/min aos esforços.",
-      recommendation: "Realizar balanço hídrico rigoroso (atentar para diurese e oferta de líquido 1000ml). Manter cabeceira elevada (Fowler/Semi-Fowler)."
+      situation: "Diagnóstico: Insuficiência Cardíaca Congestiva (ICC). Tempo de internação: 1 dia. Hemodinamicamente estável e afebril. RH = 1000 ml/dia. CVP em face anterior de antebraço D (J22), permeabilizado. Hiperemia que não embranquece ao toque em região sacral. Ventilação espontânea em ar ambiente com uso de cateter nasal de O2 2L/min aos esforços.",
+      background: "Obesidade Grau III (IMC 42). Ortopneia severa (intolerante total ao decúbito 0°). HAS. DM.",
+      assessment: "Neurológico: Glasgow 15 (AO: 4/ RV: 5/ RM: 6), PIF+. Motor: permanece em cadeira (dependente parcial); FM III em MMII e V em MMSS; edema generalizado, especialmente em MMII. Gastro: dieta hipossódica via oral, com baixa aceitação no momento. Micção espontânea em papagaio, 2200ml/24h. EVN 0 (sem dor).",
+      recommendation: "Realizar balanço hídrico rigoroso (atentar para diurese e oferta de líquido 1000ml). Manter cabeceira elevada (Fowler/Semi-Fowler) ou cadeira para alívio da ortopneia."
     },
     scenario: "Você entra no quarto para visita de enfermagem no período noturno e observa que o paciente se encontra sentado na cadeira desde o plantão da tarde, após o almoço, dormindo.",
     enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
@@ -226,10 +226,10 @@ export const patients: PatientCase[] = [
     age: 76,
     diagnosis: "Fratura de fêmur D (aguarda cirurgia)",
     sbar: {
-      situation: "Delirium Hipoativo. Hipertireoidismo. Emagrecido (IMC 16). Tempo de Internação: 2 dias. Hemodinamicamente estável e afebril.",
-      background: "Neurológico: Glasgow 13 (AO=3/RV=4/RM=6). PIF+. Ventilação espontânea, AA. Normoglicêmica (pós-correção de hipoglicemia com 3 amp G50%).",
-      assessment: "Motor: Sinais de dor à mobilização, FM com avaliação prejudicada, acamado, dependente para mobilização. Tecido acastanhado escurecido com bordas irregulares em calcâneo E. Dermatite associada à incontinência em região perineal. Dieta pastosa VO, com baixa aceitação (⅓ do oferecido). Perdeu CVP. Micção em SVD.",
-      recommendation: "Puncionar novo CVP de forma urgente. Controle rigoroso de glicemia capilar de 2/2h até estabilização. Aplicar barreira protetora em região perineal."
+      situation: "Diagnóstico: Fratura de fêmur D (aguarda cirurgia). Tempo de internação: 2 dias. Hemodinamicamente estável e afebril. Perdeu CVP. Dermatite associada à incontinência em região perineal. Tecido acastanhado escurecido com bordas irregulares em calcâneo E. Ventilação espontânea em ar ambiente.",
+      background: "Delirium hipoativo. Hipertireoidismo. Emagrecido (IMC 16).",
+      assessment: "Neurológico: Glasgow 13 (AO: 3/ RV: 4/ RM: 6), PIF+. Motor: sinais de dor à mobilização; FM com avaliação prejudicada; acamado, dependente para mobilização. Gastro: dieta pastosa VO, com baixa aceitação (1/3 do oferecido); apresentou hipoglicemia, administradas 3 ampolas de G50%. Micção em SVD. EVN 0 (sem dor).",
+      recommendation: "Puncionar novo CVP de forma urgente para manutenção e possíveis intercorrências. Controle rigoroso de glicemia capilar de 2/2h até estabilização. Aplicar barreira protetora em região perineal."
     },
     scenario: "O Sr. Manoel está no 3º PO de fratura de fêmur, está emagrecido e possui uma lesão suspeita de tecido profundo no calcâneo esquerdo (tecido acastanhado). A fratura limita muito sua movimentação.",
     enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
@@ -271,10 +271,10 @@ export const patients: PatientCase[] = [
     age: 82,
     diagnosis: "Síndrome de imobilidade (cadeira de rodas) / ITU",
     sbar: {
-      situation: "Sepse com foco urinário. Tempo de Internação: 15 dias. LPP sacral antiga. Demência. Hemodinamicamente estável e afebril.",
-      background: "Neurológico: Glasgow 14 (AO=4/RV=4/RM=6); PIF+. Sem CVP. Ventilação espontânea, AA. Normoglicêmica.",
-      assessment: "Motor: Sinais de dor à mobilização. Gastro: Dieta VO pastosa, com boa aceitação. Micção em fralda. EVN 0 (sem dor). Lesão em região sacral, cerca de 5cm em sua maior extensão, com tecido de granulação, bordas regulares.",
-      recommendation: "Alta programada para hoje. Plano de alta com orientação para cuidadores."
+      situation: "Diagnóstico: Síndrome de imobilidade (cadeira de rodas) / ITU. Tempo de internação: 15 dias. Hemodinamicamente estável e afebril. Sem CVP. Ventilação espontânea em ar ambiente. Normoglicêmica. Lesão em região sacral, cerca de 5 cm em sua maior extensão, com tecido de granulação, bordas regulares.",
+      background: "Sepse com foco urinário. LPP sacral antiga desenvolvida na ILPI. Demência.",
+      assessment: "Neurológico: Glasgow 14 (AO: 4/ RV: 4/ RM: 6), PIF+. Motor: sinais de dor à mobilização; FM grau IV em MMSS e grau 0 em MMII; dependente para mobilização. Gastro: dieta VO pastosa, com boa aceitação. Micção em fralda. EVN 0 (sem dor).",
+      recommendation: "Alta programada para hoje. Plano de alta com orientação para os cuidadores a respeito das lesões por pressão."
     },
     scenario: "Sra. Antônia está com alta programada, mas possui uma lesão de 5 cm na região sacral que deve garantir a cicatrização. Ela está estável e bem alimentada, mas a umidade da fralda é um fator de risco constante.",
     enigmaTitle: "Enigma: Reposicionamento (\"R\")",
