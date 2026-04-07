@@ -80,7 +80,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Alto"
     },
     lesionDescription: "LPP Estágio 1 na região auricular E com tecido necrótico seco.",
-    correctTreatments: ["Hidrocolóide", "Filme Transparente"],
+    correctTreatments: ["Colagenase", "Hidrocolóide", "Filme Transparente"],
     treatmentExplanation: "Película protetora ou placa de hidrocoloide para proteção da região auricular e prevenção de progressão da lesão.",
     nursingAction: "Proteger orelhas do atrito com cateter nasal e reposicionar frequentemente."
   },
@@ -125,7 +125,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Severo"
     },
     lesionDescription: "LPP Sacral Estágio 3 (perda total da espessura da pele), com esfacelos centrais e tecido de granulação ao redor.",
-    correctTreatments: ["Alginato de Cálcio", "Hidrofibra"],
+    correctTreatments: ["Papaína 10%", "Hidrofibra", "AGE (Ácidos Graxos Essenciais)", "Filme Transparente", "Óxido de Zinco", "PHMB (Polihexanida)"],
     treatmentExplanation: "Alginato de Cálcio ou Hidrofibra (devido às bordas sangrantes e necessidade de preenchimento) associado a curativo secundário absorvente.",
     nursingAction: "Mudança de decúbito rigorosa de 2h/2h, já que a paciente é totalmente imóvel."
   },
@@ -170,7 +170,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Leve"
     },
     lesionDescription: "Incisão abdominal com dreno Portovac apresentando vazamento de exsudato.",
-    correctTreatments: ["Filme Transparente", "Curativo Absorvente"],
+    correctTreatments: ["Alginato de Cálcio", "Filme Transparente", "Óxido de Zinco"],
     treatmentExplanation: "Curativo absorvente estéril trocado com frequência para evitar maceração da pele perilesional.",
     nursingAction: "Troca de camisolas e lençóis úmidos imediatamente para evitar umidade excessiva (fator de risco na Escala de Braden)."
   },
@@ -215,7 +215,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Moderado"
     },
     lesionDescription: "LPP Estágio 1 em região sacral com hiperemia que não embranquece.",
-    correctTreatments: ["Hidrocolóide Extra Fino", "Película Protetora"],
+    correctTreatments: ["AGE (Ácidos Graxos Essenciais)", "Hidrocolóide"],
     treatmentExplanation: "Película Protetora sem ardor ou Placa de Hidrocoloide Extra Fino para redução do atrito.",
     nursingAction: "Manejo da anasarca e proteção da pele friável; uso de superfícies de suporte (colchão pneumático) devido ao peso elevado (IMC 42)."
   },
@@ -260,7 +260,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Alto"
     },
     lesionDescription: "Lesão Tissular Profunda (LTP) no calcâneo E.",
-    correctTreatments: ["Espuma de Poliuretano"],
+    correctTreatments: ["Hidrocolóide", "Filme Transparente"],
     treatmentExplanation: "Espuma de poliuretano com rebordo de silicone (calcâneo) para redistribuição de pressão.",
     nursingAction: "Uso de coxins para \"flutuar\" os calcanhares (elevação sem contato com a cama)."
   },
@@ -305,7 +305,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Moderado"
     },
     lesionDescription: "LPP sacral antiga em fase de granulação (melhora clínica).",
-    correctTreatments: ["Hidrogel", "Hidrocolóide"],
+    correctTreatments: ["Hidrogel", "Hidrocolóide", "Óxido de Zinco"],
     treatmentExplanation: "Hidrogel ou Placa de Hidrocoloide para manter o meio úmido favorável à cicatrização.",
     nursingAction: "Orientações de alta para a família sobre manutenção dos cuidados e prevenção de novas lesões."
   }
@@ -363,6 +363,7 @@ export const TREATMENT_PRODUCTS = [
   "Hidrofibra",
   "Hidrogel",
   "Óxido de Zinco",
+  "Papaína 10%",
   "PHMB (Polihexanida)",
   "Sulfadiazina de Prata"
 ];

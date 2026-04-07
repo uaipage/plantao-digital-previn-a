@@ -12,6 +12,7 @@ import imgHidrocoloide from "@/assets/tratamentos/Hidrocoloide.png";
 import imgHidrofibra from "@/assets/tratamentos/Hidrofibra.png";
 import imgHidrogel from "@/assets/tratamentos/Hidrogel.png";
 import imgOxidoDeZinco from "@/assets/tratamentos/oxido_de_zinco.png";
+import imgPapaina from "@/assets/tratamentos/Papaina.png";
 import imgPHMB from "@/assets/tratamentos/PHMB.png";
 import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.png";
 
@@ -43,6 +44,7 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "Hidrofibra": imgHidrofibra,
   "Hidrogel": imgHidrogel,
   "Óxido de Zinco": imgOxidoDeZinco,
+  "Papaína 10%": imgPapaina,
   "PHMB (Polihexanida)": imgPHMB,
   "Sulfadiazina de Prata": imgSulfadiazinaDePrata,
 };
