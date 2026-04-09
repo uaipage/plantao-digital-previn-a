@@ -359,12 +359,12 @@ export const TREATMENT_PRODUCTS = [
   "Colagenase",
   "Filme Transparente",
   "Hidrocolóide",
-  "Hidrocolóide Extra Fino",
   "Hidrofibra",
   "Hidrogel",
   "Óxido de Zinco",
   "Papaína 10%",
   "PHMB (Polihexanida)",
+  "Soro Fisiológico",
   "Sulfadiazina de Prata"
 ];
 

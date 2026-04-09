@@ -15,6 +15,7 @@ import imgOxidoDeZinco from "@/assets/tratamentos/oxido_de_zinco.png";
 import imgPapaina from "@/assets/tratamentos/Papaina.png";
 import imgPHMB from "@/assets/tratamentos/PHMB.png";
 import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.png";
+import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico 0_9.png";
 
 import imgJoaquim from "@/assets/pacientes/Joaquim.jpg";
 import imgLucinda from "@/assets/pacientes/Lucinda.png";
@@ -40,12 +41,12 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "Colagenase": imgColagenase,
   "Filme Transparente": imgFilmeTransparente,
   "Hidrocolóide": imgHidrocoloide,
-  "Hidrocolóide Extra Fino": imgHidrocoloide,
   "Hidrofibra": imgHidrofibra,
   "Hidrogel": imgHidrogel,
   "Óxido de Zinco": imgOxidoDeZinco,
   "Papaína 10%": imgPapaina,
   "PHMB (Polihexanida)": imgPHMB,
+  "Soro Fisiológico": imgSoroFisiologico,
   "Sulfadiazina de Prata": imgSulfadiazinaDePrata,
 };
 
@@ -112,7 +113,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               return (
                 <button
                   key={product}
-                  onClick={() => !showFeedback && onToggleProduct(product)}
+                  onClick={() => !isCompleted && onToggleProduct(product)}
                   className={chipClass}
                 >
                   {image && (

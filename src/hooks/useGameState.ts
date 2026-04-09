@@ -178,6 +178,7 @@ export function useGameState() {
 
   const togglePhase3Product = useCallback((patientId: number, product: string) => {
     setState(prev => {
+      if (prev.phase3Completed.has(patientId)) return prev;
       const current = prev.phase3Selections[patientId] || [];
       const newSelections = current.includes(product)
         ? current.filter(p => p !== product)
@@ -188,6 +189,8 @@ export function useGameState() {
           ...prev.phase3Selections,
           [patientId]: newSelections,
         },
+        phase3ShowFeedback: { ...prev.phase3ShowFeedback, [patientId]: false },
+        phase3IsCorrect: { ...prev.phase3IsCorrect, [patientId]: false },
       };
     });
   }, []);
