@@ -103,7 +103,8 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               const image = PRODUCT_IMAGES[product];
 
               let chipClass = "product-chip flex flex-col items-center gap-2 p-3 h-auto";
-              if (showFeedback) {
+              if (showFeedback && isCorrect) {
+                // Only reveal correct answers when the user got it right
                 if (isCorrectProduct) chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto";
                 else if (selected) chipClass = "product-chip border-destructive/50 bg-destructive/5 flex flex-col items-center gap-2 p-3 h-auto";
               } else if (selected) {
@@ -162,7 +163,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
                 <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="font-bold text-foreground mb-1">Tratamento Incorreto</p>
-                  <p className="text-foreground">Os produtos selecionados não estão corretos. Os produtos corretos estão destacados em verde. Revise e tente novamente.</p>
+                  <p className="text-foreground">Os produtos selecionados não estão corretos. Revise sua escolha e tente novamente.</p>
                 </div>
               </div>
             </div>
