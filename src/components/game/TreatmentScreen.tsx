@@ -15,7 +15,7 @@ import imgOxidoDeZinco from "@/assets/tratamentos/oxido_de_zinco.png";
 import imgPapaina from "@/assets/tratamentos/Papaina.png";
 import imgPHMB from "@/assets/tratamentos/PHMB.png";
 import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.png";
-import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico 0_9.png";
+import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico.png";
 
 import imgJoaquim from "@/assets/pacientes/Joaquim.jpg";
 import imgLucinda from "@/assets/pacientes/Lucinda.png";
