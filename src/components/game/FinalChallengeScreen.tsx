@@ -72,11 +72,13 @@ const FinalChallengeScreen: React.FC<FinalChallengeScreenProps> = ({
   // Shuffled order of description indices
   const initialOrder = useMemo(() => {
     const indices = [0, 1, 2, 3, 4];
-    // Fisher-Yates shuffle
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
+    // Fisher-Yates shuffle, repeat until not in correct order
+    do {
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+      }
+    } while (indices.every((val, idx) => val === idx));
     return indices;
   }, []);
 
