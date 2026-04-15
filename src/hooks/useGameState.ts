@@ -13,6 +13,7 @@ export type GameScreen =
   | "phase3"
   | "phase3-transition"
   | "phase3-patient"
+  | "final-challenge"
   | "complete";
 
 export interface GameState {

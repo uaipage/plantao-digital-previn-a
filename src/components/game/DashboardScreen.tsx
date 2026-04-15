@@ -15,6 +15,7 @@ interface DashboardScreenProps {
   phase3Completed: Set<number>;
   onSelectPhase2Patient: (id: number) => void;
   onSelectPhase3Patient: (id: number) => void;
+  onGoToFinalChallenge: () => void;
 }
 
 const DashboardScreen: React.FC<DashboardScreenProps> = ({
@@ -29,9 +30,11 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
   phase3Completed,
   onSelectPhase2Patient,
   onSelectPhase3Patient,
+  onGoToFinalChallenge,
 }) => {
   const allPhase1Done = completedPatients.size === 6;
   const allPhase2Done = phase2Completed.size === 6;
+  const allPhase3Done = phase3Completed.size === 6;
   const completedCount = phase === 1 ? completedPatients.size
     : phase === 2 ? phase2Completed.size
     : phase3Completed.size;
@@ -158,6 +161,19 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
             className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
           >
             📊 Consolidar Scores de Braden
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+      {/* Final challenge button (Phase 3) */}
+      {allPhase3Done && phase === 3 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={onGoToFinalChallenge}
+            className="hospital-btn-accent flex items-center gap-2 animate-pulse-glow"
+          >
+            🔐 Desafio Final
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

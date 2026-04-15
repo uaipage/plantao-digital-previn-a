@@ -11,6 +11,7 @@ import BradenScreen from "@/components/game/BradenScreen";
 import TreatmentScreen from "@/components/game/TreatmentScreen";
 import Phase2TransitionScreen from "@/components/game/Phase2TransitionScreen";
 import Phase3TransitionScreen from "@/components/game/Phase3TransitionScreen";
+import FinalChallengeScreen from "@/components/game/FinalChallengeScreen";
 import CompleteScreen from "@/components/game/CompleteScreen";
 
 const Index = () => {
@@ -60,6 +61,7 @@ const Index = () => {
             phase3Completed={state.phase3Completed}
             onSelectPhase2Patient={(id) => goTo("phase2-patient", id)}
             onSelectPhase3Patient={(id) => goTo("phase3-patient", id)}
+            onGoToFinalChallenge={() => goTo("final-challenge")}
           />
         );
 
@@ -144,6 +146,14 @@ const Index = () => {
             onConfirm={() => confirmPhase3(currentPatient.id)}
             onRetry={() => retryPhase3(currentPatient.id)}
             onBack={() => goTo("dashboard")}
+          />
+        );
+
+      case "final-challenge":
+        return (
+          <FinalChallengeScreen
+            onBack={() => goTo("dashboard")}
+            onComplete={() => goTo("complete")}
           />
         );
 
