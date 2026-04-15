@@ -125,7 +125,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Severo"
     },
     lesionDescription: "LPP Sacral Estágio 3 (perda total da espessura da pele), com esfacelos centrais e tecido de granulação ao redor.",
-    correctTreatments: ["Papaína 10%", "Hidrofibra", "AGE (Ácidos Graxos Essenciais)", "Filme Transparente", "Óxido de Zinco", "PHMB (Polihexanida)"],
+    correctTreatments: ["Papaína 10%", "Hidrofibra", "AGE (Ácidos Graxos Essenciais)", "Óxido de Zinco", "Soro Fisiológico"],
     treatmentExplanation: "Alginato de Cálcio ou Hidrofibra (devido às bordas sangrantes e necessidade de preenchimento) associado a curativo secundário absorvente.",
     nursingAction: "Mudança de decúbito rigorosa de 2h/2h, já que a paciente é totalmente imóvel."
   },
@@ -170,7 +170,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Leve"
     },
     lesionDescription: "Incisão abdominal com dreno Portovac apresentando vazamento de exsudato.",
-    correctTreatments: ["Alginato de Cálcio", "Filme Transparente", "Óxido de Zinco"],
+    correctTreatments: ["Soro Fisiológico", "Alginato de Cálcio"],
     treatmentExplanation: "Curativo absorvente estéril trocado com frequência para evitar maceração da pele perilesional.",
     nursingAction: "Troca de camisolas e lençóis úmidos imediatamente para evitar umidade excessiva (fator de risco na Escala de Braden)."
   },
@@ -260,7 +260,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Alto"
     },
     lesionDescription: "Lesão Tissular Profunda (LTP) no calcâneo E.",
-    correctTreatments: ["Hidrocolóide", "Filme Transparente"],
+    correctTreatments: ["Soro Fisiológico", "Hidrocolóide"],
     treatmentExplanation: "Espuma de poliuretano com rebordo de silicone (calcâneo) para redistribuição de pressão.",
     nursingAction: "Uso de coxins para \"flutuar\" os calcanhares (elevação sem contato com a cama)."
   },
@@ -305,7 +305,7 @@ export const patients: PatientCase[] = [
       risk: "Risco Moderado"
     },
     lesionDescription: "LPP sacral antiga em fase de granulação (melhora clínica).",
-    correctTreatments: ["Hidrogel", "Hidrocolóide", "Óxido de Zinco"],
+    correctTreatments: ["Hidrogel", "Hidrocolóide", "PHMB (Polihexanida)"],
     treatmentExplanation: "Hidrogel ou Placa de Hidrocoloide para manter o meio úmido favorável à cicatrização.",
     nursingAction: "Orientações de alta para a família sobre manutenção dos cuidados e prevenção de novas lesões."
   }
