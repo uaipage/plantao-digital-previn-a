@@ -1,41 +1,41 @@
 # Plantao Digital - PREVINA
 
-Aplicacao web educacional (serious game) voltada para treinamento em prevencao e manejo de Lesao por Pressao (LPP) no contexto da enfermagem hospitalar.
+Educational web application (serious game) designed to train healthcare professionals in the prevention and management of Pressure Injuries (PI) in a hospital nursing context.
 
-O jogo utiliza casos clinicos simulados, tomada de decisao e feedback imediato para reforcar condutas seguras com base em avaliacao de risco, reposicionamento, controle de umidade, superficie de suporte e escolha de coberturas.
+The game uses simulated clinical cases, decision-making, and immediate feedback to reinforce safe practices based on risk assessment, repositioning, moisture control, support surfaces, and dressing selection.
 
-## Objetivo do projeto
+## Project objective
 
-Capacitar profissionais e estudantes de enfermagem para:
+Train nursing professionals and students to:
 
-- identificar fatores de risco para LPP;
-- aplicar condutas preventivas em cenarios clinicos;
-- classificar risco com a Escala de Braden;
-- selecionar produtos e estrategias adequadas de tratamento;
-- consolidar o raciocinio clinico por meio de desafios progressivos.
+- identify PI risk factors;
+- apply preventive actions in clinical scenarios;
+- classify risk using the Braden Scale;
+- select appropriate products and treatment strategies;
+- strengthen clinical reasoning through progressive challenges.
 
-## Como o jogo funciona
+## How the game works
 
-O fluxo principal e dividido em 3 fases, com desafio final:
+The main flow is divided into 3 phases, plus a final challenge:
 
-1. Fase 1 - Casos Clinicos
-	O jogador analisa pacientes, escolhe a melhor conduta e coleta letras.
-2. Cofre
-	As letras formam a senha PREVINA para liberar a proxima etapa.
-3. Fase 2 - Escala de Braden
-	O jogador pontua os dominios da escala para cada paciente e valida o risco.
-4. Fase 3 - Tratamento
-	Selecao de produtos/curativos corretos conforme o tipo de lesao.
-5. Desafio Final
-	Consolidacao dos conhecimentos trabalhados nas fases anteriores.
+1. Phase 1 - Clinical Cases
+	The player analyzes patients, chooses the best intervention, and collects letters.
+2. Vault
+	The letters form the password PREVINA to unlock the next stage.
+3. Phase 2 - Braden Scale
+	The player scores each domain of the scale for each patient and validates risk.
+4. Phase 3 - Treatment
+	Selection of the correct products/dressings based on lesion type.
+5. Final Challenge
+	Consolidation of knowledge covered in previous phases.
 
-## Publico-alvo
+## Target audience
 
-- Equipes de enfermagem hospitalar
-- Estudantes de enfermagem
-- Programas de educacao permanente em saude
+- Hospital nursing teams
+- Nursing students
+- Continuing education programs in healthcare
 
-## Tecnologias utilizadas
+## Technologies used
 
 - React 18
 - TypeScript
@@ -46,51 +46,51 @@ O fluxo principal e dividido em 3 fases, com desafio final:
 - TanStack Query
 - Vitest + Testing Library
 
-## Requisitos
+## Requirements
 
 - Node.js 18+
 - npm 9+
 
-## Como executar localmente
+## How to run locally
 
 ```sh
-# 1) Instalar dependencias
+# 1) Install dependencies
 npm install
 
-# 2) Rodar em desenvolvimento
+# 2) Run in development mode
 npm run dev
 
-# 3) Build de producao
+# 3) Production build
 npm run build
 
-# 4) Preview da build
+# 4) Preview the build
 npm run preview
 ```
 
-## Scripts disponiveis
+## Available scripts
 
-- `npm run dev`: inicia o servidor de desenvolvimento
-- `npm run build`: gera build de producao
-- `npm run build:dev`: gera build em modo development
-- `npm run preview`: sobe preview da build
-- `npm run lint`: executa lint com ESLint
-- `npm run test`: executa testes unitarios (Vitest)
-- `npm run test:watch`: executa testes em modo watch
+- `npm run dev`: starts the development server
+- `npm run build`: generates a production build
+- `npm run build:dev`: generates a build in development mode
+- `npm run preview`: serves a preview of the build
+- `npm run lint`: runs ESLint
+- `npm run test`: runs unit tests (Vitest)
+- `npm run test:watch`: runs tests in watch mode
 
-## Estrutura principal
+## Main structure
 
 ```text
 src/
-  components/game/     # telas e componentes do jogo
-  data/gameData.ts     # casos clinicos, regras e dados das fases
-  hooks/useGameState.ts# maquina de estado e logica do jogo
-  pages/Index.tsx      # orquestracao do fluxo principal
+  components/game/      # game screens and components
+  data/gameData.ts      # clinical cases, rules, and phase data
+  hooks/useGameState.ts # state machine and game logic
+  pages/Index.tsx       # main flow orchestration
 ```
 
-## Estado atual de testes
+## Current test status
 
-O projeto possui base de testes com Vitest configurada e um teste de exemplo em `src/test/example.test.ts`.
+The project includes a Vitest test setup and an example test in `src/test/example.test.ts`.
 
-## Licenca
+## License
 
-Defina aqui a licenca oficial do projeto (ex.: MIT, proprietaria institucional, etc.).
+Define the official project license here (e.g., MIT, institutional proprietary license, etc.).
