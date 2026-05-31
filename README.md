@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# Plantao Digital - PREVINA
 
-## Project info
+Aplicacao web educacional (serious game) voltada para treinamento em prevencao e manejo de Lesao por Pressao (LPP) no contexto da enfermagem hospitalar.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+O jogo utiliza casos clinicos simulados, tomada de decisao e feedback imediato para reforcar condutas seguras com base em avaliacao de risco, reposicionamento, controle de umidade, superficie de suporte e escolha de coberturas.
 
-## How can I edit this code?
+## Objetivo do projeto
 
-There are several ways of editing your application.
+Capacitar profissionais e estudantes de enfermagem para:
 
-**Use Lovable**
+- identificar fatores de risco para LPP;
+- aplicar condutas preventivas em cenarios clinicos;
+- classificar risco com a Escala de Braden;
+- selecionar produtos e estrategias adequadas de tratamento;
+- consolidar o raciocinio clinico por meio de desafios progressivos.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Como o jogo funciona
 
-Changes made via Lovable will be committed automatically to this repo.
+O fluxo principal e dividido em 3 fases, com desafio final:
 
-**Use your preferred IDE**
+1. Fase 1 - Casos Clinicos
+	O jogador analisa pacientes, escolhe a melhor conduta e coleta letras.
+2. Cofre
+	As letras formam a senha PREVINA para liberar a proxima etapa.
+3. Fase 2 - Escala de Braden
+	O jogador pontua os dominios da escala para cada paciente e valida o risco.
+4. Fase 3 - Tratamento
+	Selecao de produtos/curativos corretos conforme o tipo de lesao.
+5. Desafio Final
+	Consolidacao dos conhecimentos trabalhados nas fases anteriores.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Publico-alvo
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Equipes de enfermagem hospitalar
+- Estudantes de enfermagem
+- Programas de educacao permanente em saude
 
-Follow these steps:
+## Tecnologias utilizadas
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui (Radix UI)
+- React Router
+- TanStack Query
+- Vitest + Testing Library
+
+## Requisitos
+
+- Node.js 18+
+- npm 9+
+
+## Como executar localmente
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1) Instalar dependencias
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2) Rodar em desenvolvimento
 npm run dev
+
+# 3) Build de producao
+npm run build
+
+# 4) Preview da build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Scripts disponiveis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev`: inicia o servidor de desenvolvimento
+- `npm run build`: gera build de producao
+- `npm run build:dev`: gera build em modo development
+- `npm run preview`: sobe preview da build
+- `npm run lint`: executa lint com ESLint
+- `npm run test`: executa testes unitarios (Vitest)
+- `npm run test:watch`: executa testes em modo watch
 
-**Use GitHub Codespaces**
+## Estrutura principal
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```text
+src/
+  components/game/     # telas e componentes do jogo
+  data/gameData.ts     # casos clinicos, regras e dados das fases
+  hooks/useGameState.ts# maquina de estado e logica do jogo
+  pages/Index.tsx      # orquestracao do fluxo principal
+```
 
-## What technologies are used for this project?
+## Estado atual de testes
 
-This project is built with:
+O projeto possui base de testes com Vitest configurada e um teste de exemplo em `src/test/example.test.ts`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Licenca
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Defina aqui a licenca oficial do projeto (ex.: MIT, proprietaria institucional, etc.).
