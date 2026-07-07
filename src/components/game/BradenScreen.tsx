@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { PatientCase, BRADEN_CATEGORIES, getBradenRisk } from "@/data/gameData";
 import { ArrowLeft, CheckCircle2, XCircle, RotateCcw } from "lucide-react";
+import SbarSidebar from "./SbarSidebar";
 
 interface BradenScreenProps {
   patient: PatientCase;
@@ -36,6 +37,8 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
 
   return (
     <div className="p-6 animate-fadeIn">
+      <SbarSidebar patient={patient} />
+
       <div className="hospital-header rounded-t-lg -mx-6 -mt-6 mb-6">
         <button onClick={onBack} className="hover:opacity-80">
           <ArrowLeft className="w-5 h-5" />
@@ -49,24 +52,10 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
           <p className="text-sm text-muted-foreground">{patient.diagnosis}</p>
         </div>
 
-        {/* SBAR */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="hospital-card">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">S — Situação</h4>
-            <p className="text-sm text-foreground">{patient.sbar.situation}</p>
-          </div>
-          <div className="hospital-card">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">B — Background</h4>
-            <p className="text-sm text-foreground">{patient.sbar.background}</p>
-          </div>
-          <div className="hospital-card">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">A — Avaliação</h4>
-            <p className="text-sm text-foreground">{patient.sbar.assessment}</p>
-          </div>
-          <div className="hospital-card">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">R — Recomendação</h4>
-            <p className="text-sm text-foreground">{patient.sbar.recommendation}</p>
-          </div>
+        <div className="hospital-card border-dashed border-primary/40 bg-primary/5">
+          <p className="text-sm text-foreground">
+            Clique na aba <strong>Ficha SBAR</strong> na lateral direita para consultar os dados enquanto preenche a escala.
+          </p>
         </div>
 
         {/* Braden categories */}
