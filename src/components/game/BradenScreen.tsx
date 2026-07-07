@@ -63,7 +63,7 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
           {BRADEN_CATEGORIES.map(cat => (
             <div key={cat.key} className="hospital-card">
               <h4 className="font-semibold text-foreground text-sm mb-2">{cat.name}</h4>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {cat.levels.map(level => {
                   const selected = inputs[cat.key] === level.score;
                   const isCorrectAnswer = level.score === patient.braden[cat.key];
@@ -74,7 +74,7 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
                     <button
                       key={level.score}
                       onClick={() => !showFeedback && onSetInput(cat.key, level.score)}
-                      className={`text-left p-2 rounded-lg border text-xs transition-colors flex-1 min-w-[120px] ${
+                      className={`text-left p-2 rounded-lg border text-xs transition-colors ${
                         showCorrect ? "border-success bg-success/10" :
                         showWrong ? "border-destructive bg-destructive/10" :
                         selected ? "border-primary bg-primary/10" :

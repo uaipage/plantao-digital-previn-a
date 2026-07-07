@@ -40,20 +40,20 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
     : phase3Completed.size;
 
   return (
-    <div className="p-6 animate-fadeIn">
-      <div className="hospital-header rounded-t-lg -mx-6 -mt-6 mb-6">
+    <div className="p-4 md:p-6 animate-fadeIn">
+      <div className="hospital-header rounded-t-lg -mx-4 -mt-4 mb-5 md:-mx-6 md:-mt-6 md:mb-6">
         <Stethoscope className="w-5 h-5" />
-        <span className="font-bold">Prontuários dos Pacientes</span>
+        <span className="font-bold text-sm md:text-base">Prontuários dos Pacientes</span>
         <div className="ml-auto">
           <LetterTracker collectedLetters={collectedLetters} />
         </div>
       </div>
 
       {/* Phase tabs */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-1 -mx-1 px-1">
         <button
           onClick={() => onChangePhase(1)}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+          className={`px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-colors ${
             phase === 1 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"
           }`}
         >
@@ -61,7 +61,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
         </button>
         <button
           onClick={() => allPhase1Done ? onChangePhase(2) : undefined}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+          className={`px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-colors ${
             phase === 2 ? "bg-primary text-primary-foreground" :
             allPhase1Done ? "bg-muted text-muted-foreground hover:bg-muted/80" :
             "bg-muted/50 text-muted-foreground/40 cursor-not-allowed"
@@ -71,7 +71,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
         </button>
         <button
           onClick={() => allPhase2Done ? onChangePhase(3) : undefined}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+          className={`px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-colors ${
             phase === 3 ? "bg-primary text-primary-foreground" :
             allPhase2Done ? "bg-muted text-muted-foreground hover:bg-muted/80" :
             "bg-muted/50 text-muted-foreground/40 cursor-not-allowed"
@@ -100,7 +100,7 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
       )}
 
       {/* Patient cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {patients.map(patient => {
           const isCompleted = phase === 1 ? completedPatients.has(patient.id)
             : phase === 2 ? phase2Completed.has(patient.id)
