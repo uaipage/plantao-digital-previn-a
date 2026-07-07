@@ -36,14 +36,14 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
   }, [inputs, patient]);
 
   return (
-    <div className="p-6 animate-fadeIn">
+    <div className="p-4 md:p-6 animate-fadeIn">
       <SbarSidebar patient={patient} />
 
-      <div className="hospital-header rounded-t-lg -mx-6 -mt-6 mb-6">
+      <div className="hospital-header rounded-t-lg -mx-4 -mt-4 mb-5 md:-mx-6 md:-mt-6 md:mb-6">
         <button onClick={onBack} className="hover:opacity-80">
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <span className="font-bold">Escala de Braden — {patient.name}</span>
+        <span className="font-bold text-sm md:text-base leading-tight">Escala de Braden — {patient.name}</span>
       </div>
 
       <div className="max-w-3xl mx-auto space-y-4">
