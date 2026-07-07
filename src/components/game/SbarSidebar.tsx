@@ -26,8 +26,10 @@ const SbarSidebar: React.FC<SbarSidebarProps> = ({ patient }) => {
       </button>
 
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-[92vw] max-w-md border-l border-border bg-card shadow-2xl transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed right-0 top-0 z-50 h-full w-[92vw] max-w-md border-l border-border bg-card shadow-2xl transition-all duration-300 ${
+          isOpen
+            ? "translate-x-0 opacity-100 pointer-events-auto"
+            : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none"
         }`}
         aria-hidden={!isOpen}
       >
