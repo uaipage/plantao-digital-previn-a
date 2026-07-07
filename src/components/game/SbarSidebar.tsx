@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { PatientCase } from "@/data/gameData";
 
@@ -8,6 +8,19 @@ interface SbarSidebarProps {
 
 const SbarSidebar: React.FC<SbarSidebarProps> = ({ patient }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -71,7 +84,10 @@ const SbarSidebar: React.FC<SbarSidebarProps> = ({ patient }) => {
             </button>
           </div>
 
-          <div className="flex-1 space-y-3 overflow-y-auto p-3 md:p-4">
+          <div
+            className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-y-contain p-3 md:p-4"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
             <div className="hospital-card">
               <h4 className="mb-2 text-xs font-bold uppercase tracking-wide text-primary">S - Situacao</h4>
               <p className="text-sm text-foreground">{patient.sbar.situation}</p>
