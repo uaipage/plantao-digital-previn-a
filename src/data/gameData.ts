@@ -187,22 +187,22 @@ export const patients: PatientCase[] = [
       recommendation: "Analgesia SN. Vigilância respiratória. Manter cabeceira elevada (Fowler/Semi-Fowler) ou cadeira para alívio da ortopneia. RH=1000ml/dia. Monitorar balanço hídrico. Estimular aceitação da dieta. Controle de glicemia. Sem antibioticoterapia."
     },
     scenario: "Você entra no quarto para visita de enfermagem no período noturno e observa que o paciente se encontra sentado na cadeira desde o plantão da tarde, após o almoço, dormindo.",
-    enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
+    enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
     options: [
-      { label: "A", text: "Avalia a região sacral e o edema em membros inferiores. Considerando a permanência prolongada na cadeira, recomenda uso de almofada comum e elevação das pernas para auxiliar no retorno venoso." },
-      { label: "B", text: "Inspeciona a região sacral, observando que a hiperemia não regride após alívio da pressão e orienta uso de almofada específica para redistribuição de pressão ou alternância de posicionamento na cadeira, mantendo cabeceira elevada para ortopneia." },
-      { label: "C", text: "Observa a região sacral e os membros edemaciados e realiza massagem local suave para estimular a circulação, associando elevação de membros inferiores em um banquinho para redução do edema." },
-      { label: "D", text: "Considerando que a inspeção foi realizada no turno da manhã, orienta nova avaliação apenas semanalmente e coloca o paciente no leito, em decúbito dorsal horizontal." }
+      { label: "A", text: "Mantém o paciente na cadeira comum, sem necessidade de almofada, pois ele não sente dor e não há sinais visíveis de lesão." },
+      { label: "B", text: "Verifica a superfície de suporte da cadeira, providenciando coxim/almofada de redistribuição de pressão (nunca do tipo \"roda\"/donut), reposiciona o paciente e institui alívio de pressão a cada 15 minutos, mantendo a cabeceira elevada devido à ortopneia." },
+      { label: "C", text: "Coloca uma almofada tipo \"roda\" (donut) sob a região glútea para aliviar a pressão sacral enquanto ele permanece sentado." },
+      { label: "D", text: "Transfere o paciente para o leito em decúbito dorsal horizontal para descansar a superfície de assento, sem considerar a ortopneia." }
     ],
     correctAnswer: 1,
     letter: "V",
     letterIndex: 3,
-    successMessage: "Muito bem! Realizar o teste de alívio da pressão é fundamental. A hiperemia não regride, sendo uma LPP estágio 1. O paciente com mobilidade limitada na cadeira deve ter almofada para proteção e deve ser orientado a realizar alívio da pressão a cada 15 minutos.",
+    successMessage: "Muito bem! Pacientes com mobilidade reduzida em cadeira precisam de uma superfície de suporte adequada (coxim de redistribuição de pressão), associada a alívio de pressão a cada 15 minutos. Almofadas tipo \"roda\" são contraindicadas por concentrarem pressão nas bordas.",
     wrongExplanations: [
-      "Não se deve olhar apenas a região sacral e sim todas as regiões de proeminências ósseas. O recomendado é disponibilizar uma almofada específica no assento.",
+      "Mesmo sem dor ou lesão visível, a ausência de uma superfície de suporte adequada é um fator de risco; a prevenção deve ser proativa.",
       "",
-      "A massagem pode romper os capilares frágeis, transformando uma lesão que era apenas uma \"mancha vermelha\" em um hematoma profundo ou acelerando a abertura de uma ferida.",
-      "A inspeção deve ser feita, no mínimo, uma vez ao dia. O decúbito horizontal não é indicado para todos os pacientes e o Sr. Otávio possui ortopneia severa."
+      "Almofadas tipo \"roda\"/donut são contraindicadas, pois concentram a pressão nas bordas e podem causar isquemia tecidual.",
+      "O decúbito dorsal horizontal é contraindicado para pacientes com ortopneia severa como o Sr. Otávio."
     ],
     braden: {
       sensoryPerception: 4,
@@ -231,23 +231,23 @@ export const patients: PatientCase[] = [
       assessment: "Glasgow 12 (AO:3/RV:3/RM:6), PIF+. Acamado, força muscular com avaliação prejudicada, dependência para mobilização, com sinais de dor. Em ar ambiente, hemodinamicamente estável. Dieta pastosa VO com aceitação.",
       recommendation: "Puncionar novo CVP e iniciar SG5% 500ml 12/12h. Controle glicemia. Vigilância infecciosa e respiratória. Analgesia CPM. Aplicar creme barreira em região perineal nas trocas de fralda. Estimular aceitação da dieta. Sem antibioticoterapia. Jejum a partir da 0h."
     },
-    scenario: "O Sr. Manoel está no 3º PO de fratura de fêmur, está emagrecido e possui uma lesão suspeita de tecido profundo no calcâneo esquerdo (tecido acastanhado). A fratura limita muito sua movimentação.",
-    enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
+    scenario: "Sr. Manoel está confuso e muito magro (IMC 16). A perna direita tem uma tala posterior longa, do tornozelo até a região proximal da coxa (próxima ao trocânter), fixada com enfaixamento. O calcanhar esquerdo está em contato direto com o colchão.",
+    enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
     options: [
-      { label: "A", text: "Manter o paciente em colchão hospitalar comum, mas utilizar uma almofada em formato de \"roda\" ou \"donut\" sob os glúteos e sob os calcâneos para aliviar a pressão." },
-      { label: "B", text: "Utilizar um colchão que redistribua a pressão, junto ao reposicionamento do paciente. Manter os calcâneos elevados, sem contato direto com o leito. Manter em decúbito lateral em um ângulo de 30º em relação ao leito." },
-      { label: "C", text: "Colocar um colchão de água e evitar mudanças de decúbito para não gerar dor no local da fratura de fêmur. Manter os calcâneos apoiados no leito e protegidos com ataduras." },
-      { label: "D", text: "Forrar a cama com várias camadas de lençóis para deixar o leito macio. Levantar os calcâneos para que não fiquem em contato direto com o leito." }
+      { label: "A", text: "Olha apenas a região sacral. Como ele é magro, coloca três fraldas para \"acolchoar\" o bumbum." },
+      { label: "B", text: "Realiza a Inspeção da pele sob a tala (buscando pontos de pressão do dispositivo) e eleva o calcanhar esquerdo com um travesseiro sob a panturrilha (\"flutuar o calcanhar\") para evitar LPP no calcâneo." },
+      { label: "C", text: "Massageia vigorosamente os calcanhares e o sacro se estiverem hiperemiados, para melhorar a circulação." },
+      { label: "D", text: "Realizar a inspeção de rotina 1 vez por semana e seguir o protocolo de reposicionamento do paciente a cada 3 horas." }
     ],
     correctAnswer: 1,
     letter: "I",
     letterIndex: 4,
-    successMessage: "Parabéns! Pacientes com risco alto e lesão de calcâneo precisam de uma superfície que redistribua o peso e de dispositivos que eliminem totalmente a pressão nos calcanhares, deixando-os elevados em relação ao leito. Na posição em decúbito lateral, o paciente deve ficar em ângulo de 30 graus.",
+    successMessage: "Muito bem! Pacientes caquéticos têm proeminências ósseas \"afiadas\". A Inspeção deve incluir áreas sob dispositivos (tala). Flutuar o calcanhar é mandatório (Calcanhares livres de pressão). Nota: Massagem em proeminência óssea é contraindicada!",
     wrongExplanations: [
-      "O uso de colchão hospitalar comum não auxilia na redistribuição de pressão necessária. Almofadas tipo \"roda\" são contraindicadas, pois causam isquemia nas bordas.",
+      "Deve-se inspecionar todas as proeminências ósseas, inclusive sob dispositivos como talas e gesso, não apenas a região sacral. Empilhar fraldas não substitui superfícies de redistribuição de pressão adequadas.",
       "",
-      "Colchão d'água e outros dispositivos em forma de anel não são indicados porque não distribuem o peso de forma uniforme.",
-      "O excesso de tecidos cria dobras, aumenta o calor e a fricção, além de anular o efeito de redistribuição de pressão do colchão especial."
+      "Massagem vigorosa em proeminências ósseas hiperemiadas é contraindicada, pois pode romper capilares e agravar a lesão.",
+      "A inspeção da pele deve ser diária (ou mais frequente conforme risco), nunca semanal, especialmente em pacientes com dispositivos e proeminências ósseas."
     ],
     braden: {
       sensoryPerception: 2,
@@ -311,44 +311,27 @@ export const patients: PatientCase[] = [
   }
 ];
 
-// Remap letters to spell PREVINA correctly
-// P(201) R(202->gives letters for position 1) E(203->position 2) V(204->position 3) I(205->position 4) N(206->position 5) A(202 also gives A at position 6)
-// Actually from PDF: P-R-E-V-I-N-A
-// Leito 201: P (index 0)
-// Leito 202: gives letters "A" and "N" but let's map: the game collects letters that form PREVINA
-// Let me re-check: each patient gives one letter based on the enigma theme
-// 201: P (Posicionamento)
-// 202: gives R and E? No - the PDF says "Pista Coletada: Letras A e N" for Lucinda
-// Wait, let me re-read. The password is PREVINA. 
-// P = Posicionamento (201)
-// R = Reposicionamento (206) 
-// E = Evitar umidade (203)
-// V = Verificar superfície (205)
-// I = Inspeção (204)
-// N = Nutrição (202)
-// A = Avaliação (202)
-// So Lucinda gives both N and A. That's 7 letters from 6 patients, with Lucinda giving 2.
+// Letters collected per patient, based on each patient's `letter` field above.
+// Password spelled: P-R-E-V-I-N-A
+// P = Posicionamento (201 - Joaquim)
+// R = Reposicionamento (202 - Lucinda)
+// E = Evitar umidade (203 - Maria)
+// V = Verificar superfície de suporte (204 - Otávio)
+// I = Inspeção (205 - Manoel)
+// N = Nutrição (206 - Antônia)
+// A = Avaliação (202 - Lucinda também coleta esta letra)
 
 export const LETTER_MAP: Record<number, string[]> = {
   201: ["P"],
-  202: ["E", "A"], // Actually from PDF: gives letters for Avaliação and Nutrição
-  203: ["R"],
-  204: ["I"],
-  205: ["V"],
+  202: ["R", "A"],
+  203: ["E"],
+  204: ["V"],
+  205: ["I"],
   206: ["N"],
 };
 
 // Correct order: P-R-E-V-I-N-A
 export const PREVINA_ORDER = ["P", "R", "E", "V", "I", "N", "A"];
-
-// Map patient ID to which positions in PREVINA they unlock
-export const PATIENT_LETTER_POSITIONS: Record<number, number[]> = {
-  201: [0],    // P
-  202: [2, 6], // E, A  
-  203: [5],    // N... wait
-  // Let me just simplify: each patient unlocks specific positions
-  // P(0)=201, R(1)=206, E(2)=203, V(3)=205, I(4)=204, N(5)=202, A(6)=202
-};
 
 // Available treatment products for Phase 3
 export const TREATMENT_PRODUCTS = [

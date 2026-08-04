@@ -30,7 +30,7 @@ const MessageScreen: React.FC<MessageScreenProps> = ({ onNext }) => {
                 com sucesso, você deve coletar todas as pistas.
               </p>
               <p className="text-foreground leading-relaxed font-semibold">
-                Cada decisão correta libera uma letra da senha final.
+                Cada decisão correta libera uma letra da senha final que formará um mnemônico.
               </p>
             </div>
           </div>
