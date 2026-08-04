@@ -26,7 +26,7 @@ const MessageScreen: React.FC<MessageScreenProps> = ({ onNext }) => {
               </p>
               <p className="text-foreground leading-relaxed mb-4">
                 O sistema de alerta de risco disparou. Se não agirmos agora, teremos LPPs agravadas 
-                ou irreversíveis até o amanhecer. Para proteger os pacientes e concluir este plantão 
+                ou irreversíveis até o fim do plantão. Para proteger os pacientes e concluir este plantão 
                 com sucesso, você deve coletar todas as pistas.
               </p>
               <p className="text-foreground leading-relaxed font-semibold">

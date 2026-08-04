@@ -25,7 +25,7 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onNext }) => {
           <p className="text-foreground leading-relaxed text-base">
             É o seu primeiro dia no novo e reluzente emprego, e a empolgação não poderia ser maior. 
             Você chega ao hospital muito feliz, mas, ao atravessar a porta da enfermaria da Unidade 
-            de Clínica Médica, já encontra a enfermeira do plantão diurno, apressada, segurando sua 
+            de Clínica Médica, já encontra a enfermeira do plantão, apressada, segurando sua 
             bolsa, te esperando…
           </p>
           <p className="text-foreground leading-relaxed text-base mt-4">
