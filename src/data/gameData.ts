@@ -54,17 +54,17 @@ export const patients: PatientCase[] = [
     scenario: "O Sr. Joaquim está \"escorregando\" na cama a todo momento. O queixo encostando no peito. O cateter nasal está esticado, pressionando a parte superior da orelha. A fralda está úmida.",
     enigmaTitle: "Enigma: Posicionamento de dispositivos (\"P\")",
     options: [
-      { label: "A", text: "Coloca a cama em posição de trendelemburg, puxa o paciente pelas axilas de volta para o travesseiro, eleva a cabeceira a 90° para melhorar a respiração e reforça a fixação do cateter." },
-      { label: "B", text: "Chama ajuda para reposicionar usando lençol móvel para evitar atrito, mantém cabeceira a 30-45°, eleva os membros inferiores para evitar deslizamento e protege as orelhas do atrito com o cateter com hidrocoloide ou gaze." },
-      { label: "C", text: "Mantém o paciente na posição, priorizando a vontade dele, pois ele geme ao ser mobilizado. Troca a fralda, protege as orelhas do atrito com o cateter com hidrocoloide ou gaze, seguido da elevação da cabeceira à 45°." },
-      { label: "D", text: "Reposiciona o paciente sobre o leito com uso de travessa, elevando a cabeceira a 45º, coloca almofadas d'água nos calcanhares para diminuir a pressão e usa fita microporosa para evitar a movimentação dos dispositivos." }
+      { label: "A", text: "Realiza o reposicionamento com lençol móvel em dupla, eleva a cabeceira a pelo menos 60° para otimizar o padrão ventilatório e ajusta a fixação do cateter com fita hipoalergênica sob leve tração para evitar deslocamento." },
+      { label: "B", text: "Solicita ajuda para reposicionamento no leito usando lençol móvel para evitar atrito, mantém cabeceira a 30-45°, eleva os membros inferiores para evitar deslizamento e protege as orelhas do atrito com o cateter com hidrocoloide." },
+      { label: "C", text: "Mantém o decúbito atual provisoriamente devido à queixa álgica à mobilização, reposicionando-o suavemente pelo tronco superior após analgesia, e aplica filme transparente nas orelhas para reduzir a fricção, seguido da elevação da cabeceira à 45° para evitar broncoaspiração." },
+      { label: "D", text: "Reposiciona o paciente sobre o leito com uso de lençol móvel, elevando a cabeceira 30-45º, posiciona almofadas d'água nos calcanhares para diminuir a pressão e utiliza fita microporosa sob leve tração para evitar a movimentação dos dispositivos a atrito com a pele." }
     ],
     correctAnswer: 1,
     letter: "P",
     letterIndex: 0,
-    successMessage: "Excelente! A proteção da orelha cobre o P que diz respeito a diminuição da fricção e cisalhamento. A cabeceira não deve ser elevada em ângulo maior que 30-45°, se não houver contraindicação médica.",
+    successMessage: "Excelente! A proteção da orelha com hidrocolóide, no mnemônico, explica o P (Posicionamento de Dispositivos) que diz respeito a diminuição da fricção e cisalhamento. Para evitar fricção no leito, utiliza-se lençol móvel para movimentação e cabeceira de 30-45° evitando deslizamento.",
     wrongExplanations: [
-      "Atente-se em relação à fixação do cateter, se estiver muito apertado pode exercer grande pressão na pele e ocasionar lesões. O posicionamento à 90° não é recomendado para repouso prolongado por aumentar riscos de lesão por pressão.",
+      "Atente-se em relação à fixação do cateter, se estiver muito apertado pode exercer grande pressão na pele e ocasionar lesões. O posicionamento à 60° não é recomendado para repouso prolongado por aumentar riscos de lesão por pressão.",
       "",
       "Ao priorizar a vontade do paciente, há aumento no risco para agravar o processo de recuperação, portanto é ideal conversar e tentar um consenso para a mobilização, evitando manter a mesma posição por tempo prolongado.",
       "É falso que o uso de almofadas d'água auxiliam na prevenção de lesões por pressão, pois podem ocasionar falha na redistribuição de pressão."
@@ -96,23 +96,23 @@ export const patients: PatientCase[] = [
       assessment: "Glasgow 13 (AO:4/RV:2/RM:6), PIF+. Acamada, hemiplegia à D, força muscular grau IV à E, dependência para mobilização, com sinais de dor. Em ar ambiente, hemodinamicamente estável. Disfagia, jejum no momento, aguarda RX para liberação de sonda para alimentação. Evacuação ausente nas 24h. Micção espontânea em fralda. Lesão 7 cm em região sacral, com esfacelos em centro e tecido de granulação ao redor, bordas irregulares, maceradas e sangrantes. Hipodermóclise em coxa D (J22). Normoglicêmica e afebril.",
       recommendation: "Analgesia CPM. Manter jejum até liberação da sonda. Curativo em região sacral. Mudança de decúbito frequente. Sem antibioticoterapia."
     },
-    scenario: "Lucinda está em jejum prolongado aguardando confirmação do posicionamento da sonda por RX. A lesão sacral precisa de atenção urgente.",
+    scenario: "A sra. Lucinda Alves está em jejum rigoroso até a liberação da sonda por Raio-x.",
     enigmaTitle: "Enigma: Avaliação de Risco e Nutrição (\"A\" e \"N\")",
     options: [
-      { label: "A", text: "Risco Alto. Percepção sensorial alterada (pelo AVC), com mobilidade totalmente limitada. A nutrição não é urgente, visto que está adequada à situação clínica." },
-      { label: "B", text: "Risco Moderado. Percepção sensorial limitada (pelo AVC), com mobilidade reduzida, preservada parcialmente. O início da dieta enteral é urgente, mesmo sem o RX de confirmação." },
-      { label: "C", text: "Risco Alto. Percepção sensorial alterada (pelo AVC), com mobilidade totalmente limitada. A dieta, a partir da confirmação pelo RX, do posicionamento da sonda, é urgente, pois o jejum prolongado reduz a tolerância tecidual." },
-      { label: "D", text: "Risco Baixo. Percepção sensorial afetada (pelo AVC), com mobilidade reduzida, preservada parcialmente, consegue se alimentar adequadamente." }
+      { label: "A", text: "Risco Alto. Percepção sensorial alterada (pelo AVC), com mobilidade totalmente limitada. A nutrição não é urgente, visto que está adequada à situação clínica em que se encontra, aguardando realização do raio-x pela equipe multiprofissional." },
+      { label: "B", text: "Risco Moderado. Percepção sensorial limitada (pelo AVC), com mobilidade reduzida, preservada parcialmente. O início da dieta enteral é urgente, mesmo sem o raio-x de confirmação, pois o jejum prolongado reduz a tolerância tecidual." },
+      { label: "C", text: "Risco Alto. Percepção sensorial alterada (pelo AVC), com mobilidade totalmente limitada. A dieta, a partir da confirmação pelo raio-x, do posicionamento da sonda, é urgente, pois o jejum prolongado reduz a tolerância tecidual." },
+      { label: "D", text: "Risco Baixo. Percepção sensorial afetada (pelo AVC), com mobilidade reduzida, preservada parcialmente, consegue se alimentar adequadamente, com acompanhamento da equipe multiprofissional que avalia uma vez o risco de lesões por pressão, com a necessidade de passagem de sonda." }
     ],
     correctAnswer: 2,
-    letter: "R",
-    letterIndex: 1,
-    successMessage: "Exato! A Avaliação correta dispara o alerta, ela possui um Risco Alto para desenvolvimento ou agravamento da lesão por pressão. A Nutrição é o \"combustível\" para manter a pele íntegra. Pistas Coletadas: Letras R, E",
+    letter: "A e N",
+    letterIndex: 6,
+    successMessage: "Exato! A Avaliação do Risco (Letra A) está correta, ela possui um Risco Alto para desenvolvimento ou agravamento da lesão por pressão. A Nutrição (Letra N) é o \"combustível\" para manter a pele íntegra, portanto uma ingestão dietética adequada de proteínas e calorias deve ser mantida durante a doença/hospitalização.",
     wrongExplanations: [
       "Um paciente com desenvolvimento de lesão por pressão não deve ficar em jejum prolongado, pois, em pacientes críticos, prejudica a cicatrização e promove a evolução da ferida.",
-      "Uma paciente acamada, dependente e com hemiplegia (FM 0) é classificada como Alto Risco pela Escala de Braden. Além disso, é necessário o RX para confirmar o posicionamento da sonda.",
+      "Uma paciente acamada, dependente e com hemiplegia é classificada como Alto Risco pela Escala de Braden. Os dados mostram que ela é totalmente dependente para mobilização. Além disso, uma ingestão dietética adequada de proteínas e calorias deve ser mantida durante a doença/hospitalização, porém é necessário o raio-x para confirmar o posicionamento da sonda.",
       "",
-      "Classificar como \"Risco Baixo\" ignora a realidade de uma paciente com AVCi crônico (30 dias de internação) e lesão cutânea já existente."
+      "Classificar como \"Risco Baixo\" ignora a realidade de uma paciente com AVCi crônico (30 dias de internação) e lesão cutânea já existente. Os pacientes hospitalizados necessitam ser avaliados a cada plantão ou a cada mobilização quanto ao risco de lesões por pressão e não apenas uma única vez durante a internação."
     ],
     braden: {
       sensoryPerception: 2,
@@ -141,22 +141,22 @@ export const patients: PatientCase[] = [
       assessment: "Glasgow 14 (AO:3/RV:5/RM:6), PIF+. Deambula ocasionalmente, força muscular grau V, dependência parcial para movimentação, com dor (8/10). Em ar ambiente, hemodinamicamente estável. Dieta geral VO com aceitação.",
       recommendation: "Coletar 1 par de hemoculturas e swab do dreno. Iniciar antibioticoterapia imediatamente após coleta. Reavaliar a eficácia da bomba de PCA com a equipe médica. Realizar curativo em FO abdominal e inserção de dreno. Monitorar débito de dreno. Estimular aceitação da dieta."
     },
-    scenario: "Ao entrar no quarto, você sente um cheiro característico. Maria está gemendo de dor (8/10). Ao levantar o lençol, a camisola está encharcada de suor e há vazamento de secreção sero-hemática do dreno Portovac, deixando a roupa de cama úmida.",
+    scenario: "Ao entrar no quarto, você sente um cheiro característico. Maria está gemendo de dor (8/10). Ao levantar o lençol, você nota que a camisola está encharcada de suor e há vazamento de secreção sero-hemática do dreno Portovac, deixando a roupa de cama úmida.",
     enigmaTitle: "Enigma: Evitar a umidade (\"E\")",
     options: [
-      { label: "A", text: "Controlar rigorosamente a umidade, realizando troca imediata da roupa de cama sempre que úmida, promovendo higiene adequada da pele com água morna e secagem cuidadosa, além de manter o leito limpo e seco." },
-      { label: "B", text: "Posicionamento adequado do dreno Portovac, para evitar lesões por tração ou cisalhamento. Massagear as regiões de proeminências ósseas, se estiverem com hiperemia, para estimular a circulação." },
-      { label: "C", text: "Verificar o posicionamento da paciente no leito e, se necessário, reposicionar rigorosamente a cada 3-4 horas. Trocar a roupa de cama e hidratar a pele do paciente." },
-      { label: "D", text: "Como a paciente está com muita dor, controlar a umidade colocando mais lençóis no leito para absorção, não retirando os úmidos, evitando a movimentação excessiva e a fricção no leito." }
+      { label: "A", text: "Controlar rigorosamente a umidade, realizando troca imediata da roupa de cama sempre que úmida, promovendo higiene adequada da pele com água morna, sabonete com pH próximo a 5,5 e secagem cuidadosa, além de manter o leito limpo e seco." },
+      { label: "B", text: "Posicionamento adequado do dreno Portovac, para evitar lesões por tração ou cisalhamento. Durante o banho utilizar água fria e sabonete com pH próximo a 5,5. Massagear as regiões de proeminências ósseas, se estiverem com hiperemia, para estimular a circulação e diminuir o risco de evoluir para LPP." },
+      { label: "C", text: "Verificar o posicionamento adequado da paciente no leito e, se necessário, reposicionar rigorosamente a cada 3-4 horas. Trocar a roupa de cama e hidratar a pele do paciente com massagem vigorosa em regiões de proeminências ósseas. Durante o banho, otimizar a utilização de sabonetes de pH 9 a 10, porque o caráter alcalino cria uma barreira de proteção para a pele, evitando futuras lesões." },
+      { label: "D", text: "Como a paciente está com muita dor, controlar a umidade colocando mais lençóis no leito para absorção, evitando a movimentação excessiva e a fricção no leito, que deve ser feita durante o banho como uso de sabonetes de caráter alcalino que diminuem a abrasão com a pele e a incidência de lesões." }
     ],
     correctAnswer: 0,
     letter: "E",
     letterIndex: 2,
-    successMessage: "Perfeito! Evitar a fonte da umidade (curativo vazando e sudorese excessiva), e proteger a pele (barreira), evitando o uso de água quente e sabonete que podem ressecar a pele e aumentar o risco de lesão por pressão, é a essência do E.",
+    successMessage: "Perfeito! Evitar a fonte da umidade (curativo vazando e sudorese excessiva), e proteger a pele (barreira), evitando o uso de água quente e sabonete que podem ressecar a pele (o sabonete com pH ácido, próximo a 5,5, se assemelha com o pH da pele, sendo a melhor escolha para evitar o ressecamento) e aumentar o risco de lesão por pressão, é a essência do E.",
     wrongExplanations: [
       "",
-      "O posicionamento do dreno para evitar fricção é uma ação adequada, mas massagear proeminências ósseas hiperemiadas é ineficaz e pode agravar mais o quadro.",
-      "Uma escala com horários para mudança de decúbito deve ser utilizada, o posicionamento a exatamente 3-4 horas apresenta um tempo muito prolongado.",
+      "O posicionamento do dreno para evitar fricção é uma ação adequada para o caso, mas massagear proeminências ósseas hiperemiadas para diminuir o risco de evoluir para lesão por pressão é ineficaz e pode agravar mais o quadro.",
+      "Uma escala com horários para mudança de decúbito deve ser utilizada para cada paciente com presença ou em risco para lesão por pressão, o posicionamento a exatamente 3-4 horas apresenta um tempo muito prolongado.",
       "Recomenda-se que retire os lençóis molhados e substitua por novos com a movimentação da paciente sendo realizada com lençol móvel e ajuda de pelo menos mais 2 pessoas da equipe."
     ],
     braden: {
@@ -187,22 +187,22 @@ export const patients: PatientCase[] = [
       recommendation: "Analgesia SN. Vigilância respiratória. Manter cabeceira elevada (Fowler/Semi-Fowler) ou cadeira para alívio da ortopneia. RH=1000ml/dia. Monitorar balanço hídrico. Estimular aceitação da dieta. Controle de glicemia. Sem antibioticoterapia."
     },
     scenario: "Você entra no quarto para visita de enfermagem no período noturno e observa que o paciente se encontra sentado na cadeira desde o plantão da tarde, após o almoço, dormindo.",
-    enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
+    enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
     options: [
-      { label: "A", text: "Mantém o paciente na cadeira comum, sem necessidade de almofada, pois ele não sente dor e não há sinais visíveis de lesão." },
-      { label: "B", text: "Verifica a superfície de suporte da cadeira, providenciando coxim/almofada de redistribuição de pressão (nunca do tipo \"roda\"/donut), reposiciona o paciente e institui alívio de pressão a cada 15 minutos, mantendo a cabeceira elevada devido à ortopneia." },
-      { label: "C", text: "Coloca uma almofada tipo \"roda\" (donut) sob a região glútea para aliviar a pressão sacral enquanto ele permanece sentado." },
-      { label: "D", text: "Transfere o paciente para o leito em decúbito dorsal horizontal para descansar a superfície de assento, sem considerar a ortopneia." }
+      { label: "A", text: "Avalia a região sacral e o edema em membros inferiores. Considerando a permanência prolongada na cadeira, recomenda uso de almofada comum e elevação das pernas para auxiliar no retorno venoso, protegendo os calcâneos de modo a aliviar pressão, sempre mantendo a cabeceira elevada para evitar desconforto respiratório ocasionado pela ortopneia." },
+      { label: "B", text: "Inspeciona a região sacral, observando que a hiperemia não regride após alívio da pressão e orienta uso de almofada que atue na redistribuição de pressão ou alternância de posicionamento na cadeira, mantendo cabeceira elevada para ortopneia, movimentando o paciente de modo a não permanecer na mesma posição por tempo prolongado." },
+      { label: "C", text: "Observa a região sacral e os membros edemaciados e realiza massagem local suave para estimular a circulação, se não houver regressão da hiperemia após a massagem é considerada uma lesão por pressão em estágio inicial, sendo necessário posicionar o paciente em decúbito dorsal horizontal no leito para evitar a piora, associando elevação de membros inferiores em um banquinho para redução do edema em MMII." },
+      { label: "D", text: "Considerando que a inspeção foi realizada no turno da manhã, orienta nova avaliação a cada 2 dias e posiciona o paciente no leito, em decúbito dorsal horizontal, para favorecer retorno venoso e aliviar a pressão, observando queixas de desconforto respiratório. Se a hiperemia persistir sem embranquecer ao toque, é necessário fornecer analgesia ao paciente e realizar a mudança de decúbito a cada 2 horas." }
     ],
     correctAnswer: 1,
-    letter: "V",
-    letterIndex: 3,
-    successMessage: "Muito bem! Pacientes com mobilidade reduzida em cadeira precisam de uma superfície de suporte adequada (coxim de redistribuição de pressão), associada a alívio de pressão a cada 15 minutos. Almofadas tipo \"roda\" são contraindicadas por concentrarem pressão nas bordas.",
+    letter: "I",
+    letterIndex: 4,
+    successMessage: "Muito bem!! Realizar o teste de alívio da pressão é fundamental para verificar a presença de lesão por pressão, no caso dele, a hiperemia não regride, sendo uma LPP estágio 1. O paciente com mobilidade limitada e que pode permanecer na cadeira, deve ter uma almofada no assento para proteção da região das proeminências ósseas. Atentando-se o paciente que pode mudar a posição do corpo sem ajuda deve ser orientado a realizar o alívio da pressão, a cada 15 minutos, enquanto estiver sentado na cadeira. A inspeção deve ser feita, no mínimo, uma vez ao dia (a cada 24 horas), sendo possível realizar a inspeção a cada plantão ou a cada mudança de decúbito.",
     wrongExplanations: [
-      "Mesmo sem dor ou lesão visível, a ausência de uma superfície de suporte adequada é um fator de risco; a prevenção deve ser proativa.",
+      "Não se deve olhar apenas a região sacral e sim todas as regiões de proeminências ósseas. O recomendado é disponibilizar uma almofada específica no assento para proteção das regiões de proeminência óssea.",
       "",
-      "Almofadas tipo \"roda\"/donut são contraindicadas, pois concentram a pressão nas bordas e podem causar isquemia tecidual.",
-      "O decúbito dorsal horizontal é contraindicado para pacientes com ortopneia severa como o Sr. Otávio."
+      "A massagem na região sacral e nos MMII não é efetiva pois aplica uma força mecânica que pode romper os capilares frágeis, transformando uma lesão que era apenas uma \"mancha vermelha\" em um hematoma profundo ou acelerando a abertura de uma ferida (estágio 2).",
+      "A inspeção deve ser feita, no mínimo, uma vez ao dia. Em unidades de internação ou UTIs, o padrão ouro é realizar a inspeção a cada plantão ou a cada mudança de decúbito. O decúbito horizontal não é indicado para todos os pacientes e o Sr. Otávio possui ortopneia severa."
     ],
     braden: {
       sensoryPerception: 4,
@@ -231,23 +231,23 @@ export const patients: PatientCase[] = [
       assessment: "Glasgow 12 (AO:3/RV:3/RM:6), PIF+. Acamado, força muscular com avaliação prejudicada, dependência para mobilização, com sinais de dor. Em ar ambiente, hemodinamicamente estável. Dieta pastosa VO com aceitação.",
       recommendation: "Puncionar novo CVP e iniciar SG5% 500ml 12/12h. Controle glicemia. Vigilância infecciosa e respiratória. Analgesia CPM. Aplicar creme barreira em região perineal nas trocas de fralda. Estimular aceitação da dieta. Sem antibioticoterapia. Jejum a partir da 0h."
     },
-    scenario: "Sr. Manoel está confuso e muito magro (IMC 16). A perna direita tem uma tala posterior longa, do tornozelo até a região proximal da coxa (próxima ao trocânter), fixada com enfaixamento. O calcanhar esquerdo está em contato direto com o colchão.",
-    enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
+    scenario: "O Sr. Manoel (Leito 205) está no 2º DIH com quadro de fratura de fêmur D, está emagrecido e possui uma lesão suspeita de tecido profundo no calcâneo esquerdo com tecido acastanhado escurecido seco e bordas regulares. Além disso, a fratura limita muito sua movimentação.",
+    enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
     options: [
-      { label: "A", text: "Olha apenas a região sacral. Como ele é magro, coloca três fraldas para \"acolchoar\" o bumbum." },
-      { label: "B", text: "Realiza a Inspeção da pele sob a tala (buscando pontos de pressão do dispositivo) e eleva o calcanhar esquerdo com um travesseiro sob a panturrilha (\"flutuar o calcanhar\") para evitar LPP no calcâneo." },
-      { label: "C", text: "Massageia vigorosamente os calcanhares e o sacro se estiverem hiperemiados, para melhorar a circulação." },
-      { label: "D", text: "Realizar a inspeção de rotina 1 vez por semana e seguir o protocolo de reposicionamento do paciente a cada 3 horas." }
+      { label: "A", text: "Manter o paciente em colchão hospitalar, mas utilizar uma almofada em formato de \"roda\" ou \"donut\" sob os glúteos e sob os calcâneos para aliviar a pressão no sacro, pés e na fratura. Otimizando a movimentação do paciente a cada 1 hora." },
+      { label: "B", text: "Utilizar um colchão que redistribua a pressão, junto ao reposicionamento do paciente. Manter os calcâneos elevados, sem contato direto com o leito. Manter em decúbito lateral em um ângulo de 30º em relação ao leito." },
+      { label: "C", text: "Colocar um colchão pneumático e evitar mudanças de decúbito excessivas para não gerar dor no local da fratura de fêmur, devido à instabilidade local. Manter os calcâneos elevados, sem contato direto com o leito e protegidos com ataduras para evitar fricção." },
+      { label: "D", text: "Forrar a cama com várias camadas de lençóis por cima do colchão \"casca de ovos\" para evitar o contato direto e deixar o leito macio, sempre deixando um lençol móvel para a movimentação do paciente e evitar fricções, garantindo que a pele emagrecida não toque a estrutura rígida da cama. Levantar os calcâneos para que não fiquem em contato direto com o leito." }
     ],
     correctAnswer: 1,
-    letter: "I",
-    letterIndex: 4,
-    successMessage: "Muito bem! Pacientes caquéticos têm proeminências ósseas \"afiadas\". A Inspeção deve incluir áreas sob dispositivos (tala). Flutuar o calcanhar é mandatório (Calcanhares livres de pressão). Nota: Massagem em proeminência óssea é contraindicada!",
+    letter: "V",
+    letterIndex: 3,
+    successMessage: "Parabéns! Pacientes com risco alto e lesão de calcâneo precisam de uma superfície que redistribua o peso e de dispositivos que eliminem totalmente a pressão nos calcanhares, deixando-os elevados em relação ao leito. Na posição em decúbito lateral, o paciente com presença de lesão por pressão ou em risco para a mesma deve ficar em ângulo de 30 graus em relação ao colchão do leito.",
     wrongExplanations: [
-      "Deve-se inspecionar todas as proeminências ósseas, inclusive sob dispositivos como talas e gesso, não apenas a região sacral. Empilhar fraldas não substitui superfícies de redistribuição de pressão adequadas.",
+      "O uso de colchão hospitalar comum não auxilia na redistribuição de pressão necessária. Almofadas tipo \"roda\" são contraindicadas, pois causam isquemia nas bordas e aumentam o risco de lesão no centro.",
       "",
-      "Massagem vigorosa em proeminências ósseas hiperemiadas é contraindicada, pois pode romper capilares e agravar a lesão.",
-      "A inspeção da pele deve ser diária (ou mais frequente conforme risco), nunca semanal, especialmente em pacientes com dispositivos e proeminências ósseas."
+      "O colchão pneumático e outros dispositivos em forma de anel ou rosca não são indicadas para o tratamento ou prevenção de lesões por pressão porque não distribuem o peso de forma uniforme e criam áreas de fricção e pressão contrária.",
+      "O excesso de tecidos cria dobras, aumenta o calor e a fricção, além de anular o efeito de redistribuição de pressão do colchão especial."
     ],
     braden: {
       sensoryPerception: 2,
@@ -276,7 +276,7 @@ export const patients: PatientCase[] = [
       assessment: "Glasgow 14 (AO:4/RV:4/RM:6), PIF+. Cadeirante, força muscular grau IV em MMSS e grau I em MMII, dependência para mobilização, sem dor (0). Em ar ambiente, hemodinamicamente estável. Dieta pastosa VO com aceitação >50%. Micção espontânea em fralda. Evacuação pastosa 1x em 24h. Lesão 5 cm em região sacral com tecido de granulação, bordas regulares, não exsudativa. Sem dispositivos. Normoglicêmica e afebril.",
       recommendation: "Alta programada para hoje. Plano de alta com orientação para os cuidadores: cuidados com lesão, fisioterapia motora, alimentação, analgesia e mobilização."
     },
-    scenario: "Sra. Antônia está com alta programada, mas possui uma lesão de 5 cm na região sacral que deve garantir a cicatrização. Ela está estável e bem alimentada, mas a umidade da fralda é um fator de risco constante.",
+    scenario: "Sra. Antônia está com alta programada, mas possui uma lesão de 5 cm na região sacral com tecido de granulação, bordas regulares e não exsudativa, que deve garantir a cicatrização, evitando que seja interrompida e que a dor à mobilização seja controlada. Ela está em ar ambiente, estável e com aceitação favorável da dieta ofertada, o que favorece a cicatrização, mas a umidade da fralda é um fator de risco constante.",
     enigmaTitle: "Enigma: Reposicionamento (\"R\")",
     options: [
       { label: "A", text: "Orientar mudanças de decúbito a cada 4 horas durante o período noturno para não prejudicar o sono, priorizando a posição lateral a 90°, com uso de travesseiros." },
@@ -285,13 +285,13 @@ export const patients: PatientCase[] = [
       { label: "D", text: "Orientar reposicionamento regular e individualizado (em média a cada 2 horas no leito), evitando ângulo lateral de 90°, utilizando técnica com dois cuidadores e lençol móvel para reduzir cisalhamento, além de manejo rigoroso da umidade e inspeção cutânea sistemática." }
     ],
     correctAnswer: 3,
-    letter: "N",
-    letterIndex: 5,
-    successMessage: "Excelente! No plano de alta deve sempre incluir orientação sobre cuidados para família e cuidadores. Puxar o paciente causa cisalhamento. O Reposicionamento eficaz e seguro deve ser feito com lençóis móveis e 2 ou mais pessoas.",
+    letter: "R",
+    letterIndex: 1,
+    successMessage: "Excelente! No plano de alta deve sempre incluir a orientação sobre os cuidados para a família, principais cuidadores e para o paciente. Puxar o paciente causa cisalhamento, deve-se realizar o Reposicionamento eficaz e seguro com o uso de lençóis móveis que devem ser utilizados para transferir ou movimentar pacientes que não se movimentam sozinhos, devendo sempre ser realizado em 2 ou mais pessoas.",
     wrongExplanations: [
-      "Estabelece intervalo fixo e prolongado (4 horas) para paciente com LPP ativa. Decúbito lateral a 90° é contraindicado, devendo-se usar inclinação de 30°.",
-      "Condicionar o reposicionamento apenas à tolerância dolorosa desconsidra que a prevenção depende da redução sistemática da pressão.",
-      "Permanência prolongada em posição sentada aumenta pressão na região sacral em paciente com lesão ativa. Transferências com apenas um cuidador elevam o risco de cisalhamento.",
+      "Embora proponha reposicionamento, estabelece intervalo fixo e prolongado (4 horas) para paciente com LPP ativa, o que pode ser insuficiente. Além disso, recomenda decúbito lateral a 90°, posição associada a maior pressão sobre proeminências ósseas, contrariando as diretrizes que indicam inclinação aproximada de 30° para reduzir carga e cisalhamento.",
+      "Condiciona o reposicionamento apenas à tolerância dolorosa da paciente, desconsiderando que a prevenção da progressão da LPP depende da redução sistemática da pressão, independentemente da queixa álgica. Priorizar conforto em detrimento do alívio periódico da pressão pode favorecer isquemia tecidual.",
+      "Apesar de prever mudança de decúbito a cada duas horas, recomenda permanência prolongada em posição sentada, o que aumenta pressão na região sacral em paciente com lesão ativa. Ademais, a realização de transferências com apenas um cuidador eleva o risco de cisalhamento e novas lesões.",
       ""
     ],
     braden: {
@@ -314,20 +314,19 @@ export const patients: PatientCase[] = [
 // Letters collected per patient, based on each patient's `letter` field above.
 // Password spelled: P-R-E-V-I-N-A
 // P = Posicionamento (201 - Joaquim)
-// R = Reposicionamento (202 - Lucinda)
+// A, N = Avaliação de Risco e Nutrição (202 - Lucinda)
 // E = Evitar umidade (203 - Maria)
-// V = Verificar superfície de suporte (204 - Otávio)
-// I = Inspeção (205 - Manoel)
-// N = Nutrição (206 - Antônia)
-// A = Avaliação (202 - Lucinda também coleta esta letra)
+// I = Inspeção (204 - Otávio)
+// V = Verificar superfície de suporte (205 - Manoel)
+// R = Reposicionamento (206 - Antônia)
 
 export const LETTER_MAP: Record<number, string[]> = {
   201: ["P"],
-  202: ["R", "A"],
+  202: ["A", "N"],
   203: ["E"],
-  204: ["V"],
-  205: ["I"],
-  206: ["N"],
+  204: ["I"],
+  205: ["V"],
+  206: ["R"],
 };
 
 // Correct order: P-R-E-V-I-N-A

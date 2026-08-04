@@ -257,11 +257,11 @@ export function useGameState() {
 function getLettersForPatient(patientId: number): string[] {
   switch (patientId) {
     case 201: return ["P"];
-    case 202: return ["R", "A"]; // gives R(pos1) and A(pos6)
+    case 202: return ["A", "N"]; // gives A(pos6) and N(pos5)
     case 203: return ["E"];
     case 204: return ["I"];
     case 205: return ["V"];
-    case 206: return ["N"];
+    case 206: return ["R"];
     default: return [];
   }
 }
@@ -270,11 +270,11 @@ function getPositionsForPatient(patientId: number): number[] {
   // PREVINA positions: P=0, R=1, E=2, V=3, I=4, N=5, A=6
   switch (patientId) {
     case 201: return [0];    // P
-    case 202: return [1, 6]; // R, A
+    case 202: return [6, 5]; // A, N
     case 203: return [2];    // E
     case 204: return [4];    // I
     case 205: return [3];    // V
-    case 206: return [5];    // N
+    case 206: return [1];    // R
     default: return [];
   }
 }
