@@ -4,15 +4,19 @@ import { ArrowLeft, CheckCircle2, ShoppingCart, XCircle, RotateCcw } from "lucid
 
 import imgAGE from "@/assets/tratamentos/AGE.png";
 import imgAlginatoDeCálcio from "@/assets/tratamentos/Alginato_de_calcio.png";
+import imgAlginatoDeCálcioComPrata from "@/assets/tratamentos/Alginatocomprata.png";
 import imgCarvaoAtivado from "@/assets/tratamentos/Carvao_ativado.png";
 import imgCarvaoComPrata from "@/assets/tratamentos/Carvao_com_prata.png";
 import imgColagenase from "@/assets/tratamentos/Colagenase.png";
 import imgFilmeTransparente from "@/assets/tratamentos/Curativo_transparente.png";
+import imgGaze from "@/assets/tratamentos/Gaze.png";
 import imgHidrocoloide from "@/assets/tratamentos/Hidrocoloide.png";
 import imgHidrofibra from "@/assets/tratamentos/Hidrofibra.png";
 import imgHidrogel from "@/assets/tratamentos/Hidrogel.png";
 import imgOxidoDeZinco from "@/assets/tratamentos/oxido_de_zinco.png";
-import imgPapaina from "@/assets/tratamentos/Papaina.png";
+import imgCremeBarreira from "@/assets/tratamentos/creme_barreira.png";
+import imgPapaina10 from "@/assets/tratamentos/Papaina10.png";
+import imgPapaina2 from "@/assets/tratamentos/Papaina2.png";
 import imgPHMB from "@/assets/tratamentos/PHMB.png";
 import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.png";
 import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico.png";
@@ -36,15 +40,20 @@ const PATIENT_IMAGES: Record<number, string> = {
 const PRODUCT_IMAGES: Record<string, string> = {
   "AGE (Ácidos Graxos Essenciais)": imgAGE,
   "Alginato de Cálcio": imgAlginatoDeCálcio,
+  "Alginato de Cálcio com Prata": imgAlginatoDeCálcioComPrata,
   "Carvão Ativado": imgCarvaoAtivado,
   "Carvão Ativado com Prata": imgCarvaoComPrata,
   "Colagenase": imgColagenase,
+  "Creme Barreira": imgCremeBarreira,
   "Filme Transparente": imgFilmeTransparente,
+  "Membrana Polimérica": imgFilmeTransparente,
+  "Gaze": imgGaze,
   "Hidrocolóide": imgHidrocoloide,
   "Hidrofibra": imgHidrofibra,
   "Hidrogel": imgHidrogel,
   "Óxido de Zinco": imgOxidoDeZinco,
-  "Papaína 10%": imgPapaina,
+  "Papaína 2%": imgPapaina2,
+  "Papaína 10%": imgPapaina10,
   "PHMB (Polihexanida)": imgPHMB,
   "Soro Fisiológico": imgSoroFisiologico,
   "Sulfadiazina de Prata": imgSulfadiazinaDePrata,
@@ -87,6 +96,9 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
         <div className="hospital-card">
           <h3 className="font-bold text-lg text-foreground">{patient.name}, {patient.age} anos</h3>
           <p className="text-sm text-muted-foreground mt-2">{patient.lesionDescription}</p>
+          {patient.treatmentQuestion && (
+            <p className="text-sm font-semibold text-foreground mt-3">{patient.treatmentQuestion}</p>
+          )}
         </div>
 
         <div className="flex gap-5 items-start">
@@ -95,11 +107,9 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               Selecione os produtos adequados para o tratamento:
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {TREATMENT_PRODUCTS.map(product => {
+            {(patient.productOptions && patient.productOptions.length > 0 ? patient.productOptions : TREATMENT_PRODUCTS).map(product => {
               const selected = selectedProducts.includes(product);
-              const isCorrectProduct = patient.correctTreatments.some(t =>
-                product.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(product.toLowerCase())
-              );
+              const isCorrectProduct = patient.correctTreatments.includes(product);
               const image = PRODUCT_IMAGES[product];
 
               let chipClass = "product-chip flex flex-col items-center gap-2 p-3 h-auto";

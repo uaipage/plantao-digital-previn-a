@@ -31,6 +31,8 @@ export interface PatientCase {
   };
   // Phase 3 Treatment
   lesionDescription: string;
+  treatmentQuestion: string;
+  productOptions: string[];
   correctTreatments: string[];
   treatmentExplanation: string;
   nursingAction: string;
@@ -70,19 +72,21 @@ export const patients: PatientCase[] = [
       "É falso que o uso de almofadas d'água auxiliam na prevenção de lesões por pressão, pois podem ocasionar falha na redistribuição de pressão."
     ],
     braden: {
-      sensoryPerception: 2,
-      moisture: 3,
+      sensoryPerception: 3,
+      moisture: 2,
       activity: 1,
-      mobility: 2,
+      mobility: 3,
       nutrition: 2,
       frictionShear: 1,
-      total: 11,
+      total: 12,
       risk: "Risco Alto"
     },
-    lesionDescription: "LPP Estágio 1 na região auricular E com tecido necrótico seco.",
-    correctTreatments: ["Colagenase", "Hidrocolóide", "Filme Transparente"],
-    treatmentExplanation: "Película protetora ou placa de hidrocoloide para proteção da região auricular e prevenção de progressão da lesão.",
-    nursingAction: "Proteger orelhas do atrito com cateter nasal e reposicionar frequentemente."
+    lesionDescription: "Lesão de 3 cm na região auricular esquerda, com tecido necrótico seco (LPP relacionada a dispositivo médico).",
+    treatmentQuestion: "Qual a conduta terapêutica imediata para evitar a progressão da lesão?",
+    productOptions: ["Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Soro Fisiológico", "Alginato de Cálcio", "Alginato de Cálcio com Prata", "Carvão Ativado", "Creme Barreira", "Sulfadiazina de Prata", "Hidrogel", "Hidrofibra"],
+    correctTreatments: ["Papaína 2%", "Alginato de Cálcio com Prata", "Creme Barreira"],
+    treatmentExplanation: "Desbridamento autolítico com Papaína 2%; redução da carga microbiana com Alginato de Cálcio com Prata; proteção perilesional com Creme Barreira.",
+    nursingAction: "Reposicionamento do dispositivo médico (cateter) para cessar a pressão local e uso de coxins."
   },
   {
     id: 202,
@@ -118,15 +122,17 @@ export const patients: PatientCase[] = [
       sensoryPerception: 2,
       moisture: 2,
       activity: 1,
-      mobility: 1,
+      mobility: 2,
       nutrition: 1,
       frictionShear: 1,
-      total: 8,
-      risk: "Risco Severo"
+      total: 9,
+      risk: "Risco Muito Alto"
     },
-    lesionDescription: "LPP Sacral Estágio 3 (perda total da espessura da pele), com esfacelos centrais e tecido de granulação ao redor.",
-    correctTreatments: ["Papaína 10%", "Hidrofibra", "AGE (Ácidos Graxos Essenciais)", "Óxido de Zinco", "Soro Fisiológico"],
-    treatmentExplanation: "Alginato de Cálcio ou Hidrofibra (devido às bordas sangrantes e necessidade de preenchimento) associado a curativo secundário absorvente.",
+    lesionDescription: "Lesão de 7 cm em região sacral, com esfacelos em centro e tecido de granulação ao redor, bordas irregulares, maceradas e sangrantes (LPP Estágio 3).",
+    treatmentQuestion: "Qual a conduta para favorecer a reparação tecidual?",
+    productOptions: ["Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Soro Fisiológico", "Alginato de Cálcio", "Alginato de Cálcio com Prata", "Carvão Ativado", "Coxim", "Carvão Ativado com Prata", "Gaze", "Sulfadiazina de Prata", "Hidrogel", "Hidrofibra", "Óxido de Zinco"],
+    correctTreatments: ["Hidrogel", "Hidrofibra", "Óxido de Zinco"],
+    treatmentExplanation: "Desbridamento do esfacelo com Hidrogel; Hidrofibra para as bordas sangrantes em tecido de granulação; Óxido de Zinco para proteção perilesional e evitar maceração.",
     nursingAction: "Mudança de decúbito rigorosa de 2h/2h, já que a paciente é totalmente imóvel."
   },
   {
@@ -138,7 +144,7 @@ export const patients: PatientCase[] = [
     sbar: {
       situation: "3ºDIH, 2° PO de hemicolectomia à D por CA de Cólon, com dreno de sucção em fossa ilíaca D.",
       background: "Anemia.",
-      assessment: "Glasgow 14 (AO:3/RV:5/RM:6), PIF+. Deambula ocasionalmente, força muscular grau V, dependência parcial para movimentação, com dor (8/10). Em ar ambiente, hemodinamicamente estável. Dieta geral VO com aceitação.",
+      assessment: "Glasgow 14 (AO:3/RV:5/RM:6), PIF+. Deambula ocasionalmente, força muscular grau V, dependência parcial para movimentação, com dor (8/10). Em ar ambiente, hemodinamicamente estável. Dieta geral VO com aceitação < 1/3. Evacuação ausente há 48h. Micção espontânea em WC. FO longitudinal em região xifo-umbilical 13cm, pontos íntegros, com bordas aproximadas, com hiperemia, exsudativa em grande quantidade. Dreno de sucção com débito serossanguinolento (240ml/24h). CVP em antebraço E (J20) com Morfina 2mg/h via bomba de PCA. Normoglicêmica e febril.",
       recommendation: "Coletar 1 par de hemoculturas e swab do dreno. Iniciar antibioticoterapia imediatamente após coleta. Reavaliar a eficácia da bomba de PCA com a equipe médica. Realizar curativo em FO abdominal e inserção de dreno. Monitorar débito de dreno. Estimular aceitação da dieta."
     },
     scenario: "Ao entrar no quarto, você sente um cheiro característico. Maria está gemendo de dor (8/10). Ao levantar o lençol, você nota que a camisola está encharcada de suor e há vazamento de secreção sero-hemática do dreno Portovac, deixando a roupa de cama úmida.",
@@ -160,19 +166,21 @@ export const patients: PatientCase[] = [
       "Recomenda-se que retire os lençóis molhados e substitua por novos com a movimentação da paciente sendo realizada com lençol móvel e ajuda de pelo menos mais 2 pessoas da equipe."
     ],
     braden: {
-      sensoryPerception: 3,
-      moisture: 2,
+      sensoryPerception: 4,
+      moisture: 3,
       activity: 3,
       mobility: 3,
-      nutrition: 2,
+      nutrition: 1,
       frictionShear: 2,
-      total: 15,
-      risk: "Risco Leve"
+      total: 16,
+      risk: "Risco Baixo"
     },
-    lesionDescription: "Incisão abdominal com dreno Portovac apresentando vazamento de exsudato.",
-    correctTreatments: ["Soro Fisiológico", "Alginato de Cálcio"],
-    treatmentExplanation: "Curativo absorvente estéril trocado com frequência para evitar maceração da pele perilesional.",
-    nursingAction: "Troca de camisolas e lençóis úmidos imediatamente para evitar umidade excessiva (fator de risco na Escala de Braden)."
+    lesionDescription: "FO longitudinal em região xifo-umbilical, 13 cm, pontos íntegros, bordas aproximadas, com hiperemia e exsudato em grande quantidade e odor forte. Dreno de sucção (Portovac) com débito serossanguinolento (240ml/24h).",
+    treatmentQuestion: "O que a equipe deve antecipar como complicação local e sistêmica?",
+    productOptions: ["Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Colchão Pneumático", "Soro Fisiológico", "Alginato de Cálcio", "Alginato de Cálcio com Prata", "Hidrocolóide", "Gaze", "Sulfadiazina de Prata", "Membrana Polimérica", "Hidrofibra", "Carvão Ativado com Prata"],
+    correctTreatments: ["Membrana Polimérica", "Hidrofibra", "Carvão Ativado com Prata"],
+    treatmentExplanation: "Membrana polimérica e hidrofibra para diminuir a umidade local; Carvão Ativado com Prata para reduzir o odor e a proliferação de infecção.",
+    nursingAction: "Troca de camisolas e lençóis úmidos imediatamente para evitar umidade excessiva; monitorar sinais de infecção sistêmica (coleta de hemoculturas e swab do dreno)."
   },
   {
     id: 204,
@@ -183,7 +191,7 @@ export const patients: PatientCase[] = [
     sbar: {
       situation: "1ºDIH, com quadro de Insuficiência Cardíaca Congestiva (ICC), com ortopneia severa (intolerância ao decúbito 0°).",
       background: "HAS, DM. Obesidade Grau III.",
-      assessment: "Glasgow 15 (AO:4/RV:5/RM:6), PIF+. Permanece em cadeira, força muscular grau V em MMSS e grau IV em MMII, dependência parcial para movimentação, sem dor. Em ar ambiente, com uso de CN de O2 2L/min aos esforços, hemodinamicamente estável. Dieta hipossódica VO com aceitação.",
+      assessment: "Glasgow 15 (AO:4/RV:5/RM:6), PIF+. Permanece em cadeira, força muscular grau V em MMSS e grau IV em MMII, dependência parcial para movimentação, sem dor. Em ar ambiente, com uso de CN de O2 2L/min aos esforços, hemodinamicamente estável. Dieta hipossódica VO com aceitação <50%. Evacuação ausente hoje. Micção espontânea em papagaio, 1000ml/12h. Hiperemia que não embranquece ao toque em região sacral, 8cm. Edema generalizado MMII (3+/4+). CVP em face anterior de antebraço D (J22). Hiperglicêmico e afebril.",
       recommendation: "Analgesia SN. Vigilância respiratória. Manter cabeceira elevada (Fowler/Semi-Fowler) ou cadeira para alívio da ortopneia. RH=1000ml/dia. Monitorar balanço hídrico. Estimular aceitação da dieta. Controle de glicemia. Sem antibioticoterapia."
     },
     scenario: "Você entra no quarto para visita de enfermagem no período noturno e observa que o paciente se encontra sentado na cadeira desde o plantão da tarde, após o almoço, dormindo.",
@@ -206,17 +214,19 @@ export const patients: PatientCase[] = [
     ],
     braden: {
       sensoryPerception: 4,
-      moisture: 3,
+      moisture: 4,
       activity: 2,
-      mobility: 2,
+      mobility: 3,
       nutrition: 2,
-      frictionShear: 1,
-      total: 14,
-      risk: "Risco Moderado"
+      frictionShear: 2,
+      total: 17,
+      risk: "Risco Baixo"
     },
-    lesionDescription: "LPP Estágio 1 em região sacral com hiperemia que não embranquece.",
-    correctTreatments: ["AGE (Ácidos Graxos Essenciais)", "Hidrocolóide"],
-    treatmentExplanation: "Película Protetora sem ardor ou Placa de Hidrocoloide Extra Fino para redução do atrito.",
+    lesionDescription: "Hiperemia que não embranquece ao toque em região sacral, 8 cm (LPP Estágio 1). Edema generalizado em MMII (3+/4+).",
+    treatmentQuestion: "O que deve ser feito para prevenir uma complicação dessa lesão?",
+    productOptions: ["Hidrocolóide", "Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Soro Fisiológico", "Alginato de Cálcio", "Colchão Pneumático", "Alginato de Cálcio com Prata", "Carvão Ativado", "Gaze", "Sulfadiazina de Prata", "Hidrogel", "Hidrofibra", "Óxido de Zinco"],
+    correctTreatments: ["Hidrocolóide", "Colchão Pneumático"],
+    treatmentExplanation: "Placa de Hidrocolóide para reduzir a pressão e o atrito no local da lesão; Colchão Pneumático como superfície de suporte para redistribuição de pressão (não local).",
     nursingAction: "Manejo da anasarca e proteção da pele friável; uso de superfícies de suporte (colchão pneumático) devido ao peso elevado (IMC 42)."
   },
   {
@@ -228,7 +238,7 @@ export const patients: PatientCase[] = [
     sbar: {
       situation: "2ºDIH, com quadro de Fratura de fêmur D (aguarda cirurgia amanhã) + Delirium Hipoativo.",
       background: "História de queda, durante à noite, por confusão. Hipertireoidismo. Emagrecido.",
-      assessment: "Glasgow 12 (AO:3/RV:3/RM:6), PIF+. Acamado, força muscular com avaliação prejudicada, dependência para mobilização, com sinais de dor. Em ar ambiente, hemodinamicamente estável. Dieta pastosa VO com aceitação.",
+      assessment: "Glasgow 12 (AO:3/RV:3/RM:6), PIF+. Acamado, força muscular com avaliação prejudicada, dependência para mobilização, com sinais de dor. Em ar ambiente, hemodinamicamente estável. Dieta pastosa VO com aceitação < 1/3. Micção espontânea em fralda. Evacuação líquida 3x em 24h. Dermatite associada à incontinência em região perineal. Lesão 5 cm em calcâneo E, com tecido acastanhado escurecido seco, bordas regulares. Sem dispositivos. Hipoglicemia (3 amp de G 50%) e afebril.",
       recommendation: "Puncionar novo CVP e iniciar SG5% 500ml 12/12h. Controle glicemia. Vigilância infecciosa e respiratória. Analgesia CPM. Aplicar creme barreira em região perineal nas trocas de fralda. Estimular aceitação da dieta. Sem antibioticoterapia. Jejum a partir da 0h."
     },
     scenario: "O Sr. Manoel (Leito 205) está no 2º DIH com quadro de fratura de fêmur D, está emagrecido e possui uma lesão suspeita de tecido profundo no calcâneo esquerdo com tecido acastanhado escurecido seco e bordas regulares. Além disso, a fratura limita muito sua movimentação.",
@@ -250,19 +260,21 @@ export const patients: PatientCase[] = [
       "O excesso de tecidos cria dobras, aumenta o calor e a fricção, além de anular o efeito de redistribuição de pressão do colchão especial."
     ],
     braden: {
-      sensoryPerception: 2,
-      moisture: 4,
+      sensoryPerception: 3,
+      moisture: 1,
       activity: 1,
       mobility: 1,
       nutrition: 1,
       frictionShear: 1,
-      total: 10,
-      risk: "Risco Alto"
+      total: 8,
+      risk: "Risco Muito Alto"
     },
-    lesionDescription: "Lesão Tissular Profunda (LTP) no calcâneo E.",
-    correctTreatments: ["Soro Fisiológico", "Hidrocolóide"],
-    treatmentExplanation: "Espuma de poliuretano com rebordo de silicone (calcâneo) para redistribuição de pressão.",
-    nursingAction: "Uso de coxins para \"flutuar\" os calcanhares (elevação sem contato com a cama)."
+    lesionDescription: "Dermatite associada à incontinência em região perineal. Lesão Tissular Profunda (LTP) de 5 cm em calcâneo E, com tecido acastanhado escurecido seco, bordas regulares.",
+    treatmentQuestion: "Qual a conduta para tratamento da lesão?",
+    productOptions: ["Hidrocolóide", "Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Soro Fisiológico", "Alginato de Cálcio", "AGE (Ácidos Graxos Essenciais)", "Carvão Ativado", "Gaze", "Sulfadiazina de Prata", "Hidrogel", "Hidrofibra", "Óxido de Zinco", "Coxim"],
+    correctTreatments: ["Hidrocolóide", "AGE (Ácidos Graxos Essenciais)", "Coxim"],
+    treatmentExplanation: "Coxins para redistribuição de pressão, mantendo os calcanhares \"flutuando\"; AGE ou Placa de Hidrocolóide para hidratar o tecido acastanhado.",
+    nursingAction: "Uso de coxins para \"flutuar\" os calcanhares (elevação sem contato com a cama) e aplicação de creme barreira na região perineal."
   },
   {
     id: 206,
@@ -295,19 +307,21 @@ export const patients: PatientCase[] = [
       ""
     ],
     braden: {
-      sensoryPerception: 4,
-      moisture: 3,
-      activity: 1,
-      mobility: 2,
+      sensoryPerception: 3,
+      moisture: 2,
+      activity: 2,
+      mobility: 3,
       nutrition: 3,
-      frictionShear: 1,
-      total: 14,
-      risk: "Risco Moderado"
+      frictionShear: 2,
+      total: 15,
+      risk: "Risco Baixo"
     },
-    lesionDescription: "LPP sacral antiga em fase de granulação (melhora clínica).",
-    correctTreatments: ["Hidrogel", "Hidrocolóide", "PHMB (Polihexanida)"],
-    treatmentExplanation: "Hidrogel ou Placa de Hidrocoloide para manter o meio úmido favorável à cicatrização.",
-    nursingAction: "Orientações de alta para a família sobre manutenção dos cuidados e prevenção de novas lesões."
+    lesionDescription: "Lesão de 5 cm em região sacral, com tecido de granulação, bordas regulares, não exsudativa (LPP em fase de cicatrização).",
+    treatmentQuestion: "O que deve ser realizado para garantir a continuidade de cicatrização dessa ferida?",
+    productOptions: ["Hidrocolóide", "Papaína 10%", "Papaína 2%", "PHMB (Polihexanida)", "Soro Fisiológico", "Alginato de Cálcio com Prata", "Solução Polimérica", "Carvão Ativado", "Gaze", "Sulfadiazina de Prata", "Hidrogel", "Hidrofibra", "Óxido de Zinco", "Coxim"],
+    correctTreatments: ["Hidrocolóide", "PHMB (Polihexanida)", "Solução Polimérica"],
+    treatmentExplanation: "Hidrocolóide para manter o tecido de granulação em ambiente úmido favorável à cicatrização; Solução Polimérica para proteger as bordas regulares; PHMB indicado em caso de presença de biofilme.",
+    nursingAction: "Orientações de alta para a família/ILPI sobre manutenção dos cuidados e prevenção de novas lesões."
   }
 ];
 
@@ -336,16 +350,24 @@ export const PREVINA_ORDER = ["P", "R", "E", "V", "I", "N", "A"];
 export const TREATMENT_PRODUCTS = [
   "AGE (Ácidos Graxos Essenciais)",
   "Alginato de Cálcio",
+  "Alginato de Cálcio com Prata",
   "Carvão Ativado",
   "Carvão Ativado com Prata",
   "Colagenase",
+  "Colchão Pneumático",
+  "Coxim",
+  "Creme Barreira",
   "Filme Transparente",
+  "Gaze",
   "Hidrocolóide",
   "Hidrofibra",
   "Hidrogel",
+  "Membrana Polimérica",
   "Óxido de Zinco",
+  "Papaína 2%",
   "Papaína 10%",
   "PHMB (Polihexanida)",
+  "Solução Polimérica",
   "Soro Fisiológico",
   "Sulfadiazina de Prata"
 ];
@@ -413,9 +435,9 @@ export const BRADEN_CATEGORIES = [
 ];
 
 export function getBradenRisk(total: number): string {
-  if (total <= 9) return "Risco Severo";
+  if (total <= 9) return "Risco Muito Alto";
   if (total <= 12) return "Risco Alto";
   if (total <= 14) return "Risco Moderado";
-  if (total <= 18) return "Risco Leve";
+  if (total <= 18) return "Risco Baixo";
   return "Sem Risco";
 }

@@ -201,13 +201,11 @@ export function useGameState() {
       const patient = patients.find(p => p.id === patientId);
       if (!patient) return prev;
       const selected = prev.phase3Selections[patientId] || [];
-      const hasAllCorrect = patient.correctTreatments.every(t =>
-        selected.some(s => s.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.toLowerCase()))
-      );
-      const hasNoExtra = selected.every(s =>
-        patient.correctTreatments.some(t => s.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.toLowerCase()))
-      );
-      const isCorrect = hasAllCorrect && hasNoExtra;
+      const correctSet = new Set(patient.correctTreatments);
+      const selectedSet = new Set(selected);
+      const isCorrect =
+        selectedSet.size === correctSet.size &&
+        [...correctSet].every(t => selectedSet.has(t));
 
       const newCompleted = new Set(prev.phase3Completed);
       if (isCorrect) {

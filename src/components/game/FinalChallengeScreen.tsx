@@ -9,7 +9,7 @@ import imgHidrocoloide from "@/assets/tratamentos/Hidrocoloide.png";
 import imgHidrofibra from "@/assets/tratamentos/Hidrofibra.png";
 import imgHidrogel from "@/assets/tratamentos/Hidrogel.png";
 import imgOxidoDeZinco from "@/assets/tratamentos/oxido_de_zinco.png";
-import imgPapaina from "@/assets/tratamentos/Papaina.png";
+import imgPapaina10 from "@/assets/tratamentos/Papaina10.png";
 import imgPHMB from "@/assets/tratamentos/PHMB.png";
 import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico.png";
 import imgSulfadiazinaDePrata from "@/assets/tratamentos/Sulfadiazina_de_prata.png";
@@ -51,7 +51,7 @@ const VAULT_PRODUCTS = [
   { name: "Hidrofibra", img: imgHidrofibra },
   { name: "Hidrogel", img: imgHidrogel },
   { name: "Óxido de Zinco", img: imgOxidoDeZinco },
-  { name: "Papaína 10%", img: imgPapaina },
+  { name: "Papaína 10%", img: imgPapaina10 },
   { name: "PHMB", img: imgPHMB },
   { name: "Soro Fisiológico", img: imgSoroFisiologico },
   { name: "Sulfadiazina de Prata", img: imgSulfadiazinaDePrata },
