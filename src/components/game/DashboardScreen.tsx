@@ -138,6 +138,11 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
                     {patient.letter}
                   </div>
                 )}
+                {phase === 2 && isCompleted && (
+                  <div className="flex items-center justify-center min-w-8 h-8 px-1.5 rounded-lg bg-success/15 border border-success/30 text-success font-bold text-sm shrink-0">
+                    {patient.braden.total}
+                  </div>
+                )}
               </div>
               <p className="text-xs text-muted-foreground mt-3 line-clamp-2">{patient.diagnosis}</p>
             </div>
