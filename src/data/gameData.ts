@@ -12,6 +12,7 @@ export interface PatientCase {
   };
   scenario: string;
   enigmaTitle: string;
+  enigmaQuestion: string;
   options: { label: string; text: string }[];
   correctAnswer: number; // 0-indexed
   letter: string;
@@ -55,6 +56,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "O Sr. Joaquim está \"escorregando\" na cama a todo momento. O queixo encostando no peito. O cateter nasal está esticado, pressionando a parte superior da orelha. A fralda está úmida.",
     enigmaTitle: "Enigma: Posicionamento de dispositivos (\"P\")",
+    enigmaQuestion: "Você precisa resolver a questão de fricção e cisalhamento. Ele desliza constantemente. O que você faz?",
     options: [
       { label: "A", text: "Realiza o reposicionamento com lençol móvel em dupla, eleva a cabeceira a pelo menos 60° para otimizar o padrão ventilatório e ajusta a fixação do cateter com fita hipoalergênica sob leve tração para evitar deslocamento." },
       { label: "B", text: "Solicita ajuda para reposicionamento no leito usando lençol móvel para evitar atrito, mantém cabeceira a 30-45°, eleva os membros inferiores para evitar deslizamento e protege as orelhas do atrito com o cateter com hidrocoloide." },
@@ -102,6 +104,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "A sra. Lucinda Alves está em jejum rigoroso até a liberação da sonda por Raio-x.",
     enigmaTitle: "Enigma: Avaliação de Risco e Nutrição (\"A\" e \"N\")",
+    enigmaQuestion: "Com foco no estado nutricional e na avaliação de risco de Lesão por Pressão (LPP), qual é a classificação da paciente pela Escala de Braden e quais fatores críticos reduzem sua pontuação, elevando esse risco?",
     options: [
       { label: "A", text: "Risco Alto. Percepção sensorial alterada (pelo AVC), com mobilidade totalmente limitada. A nutrição não é urgente, visto que está adequada à situação clínica em que se encontra, aguardando realização do raio-x pela equipe multiprofissional." },
       { label: "B", text: "Risco Moderado. Percepção sensorial limitada (pelo AVC), com mobilidade reduzida, preservada parcialmente. O início da dieta enteral é urgente, mesmo sem o raio-x de confirmação, pois o jejum prolongado reduz a tolerância tecidual." },
@@ -149,6 +152,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "Ao entrar no quarto, você sente um cheiro característico. Maria está gemendo de dor (8/10). Ao levantar o lençol, você nota que a camisola está encharcada de suor e há vazamento de secreção sero-hemática do dreno Portovac, deixando a roupa de cama úmida.",
     enigmaTitle: "Enigma: Evitar a umidade (\"E\")",
+    enigmaQuestion: "Quais as principais ações que você pode ter para evitar as LPP, evidenciadas no caso de Maria?",
     options: [
       { label: "A", text: "Controlar rigorosamente a umidade, realizando troca imediata da roupa de cama sempre que úmida, promovendo higiene adequada da pele com água morna, sabonete com pH próximo a 5,5 e secagem cuidadosa, além de manter o leito limpo e seco." },
       { label: "B", text: "Posicionamento adequado do dreno Portovac, para evitar lesões por tração ou cisalhamento. Durante o banho utilizar água fria e sabonete com pH próximo a 5,5. Massagear as regiões de proeminências ósseas, se estiverem com hiperemia, para estimular a circulação e diminuir o risco de evoluir para LPP." },
@@ -196,6 +200,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "Você entra no quarto para visita de enfermagem no período noturno e observa que o paciente se encontra sentado na cadeira desde o plantão da tarde, após o almoço, dormindo.",
     enigmaTitle: "Enigma: Inspeção da pele (\"I\")",
+    enigmaQuestion: "Focando na inspeção e cuidados específicos com a pele sob pressão. Você vai examinar o Sr. Otávio. O que você procura e o que faz imediatamente?",
     options: [
       { label: "A", text: "Avalia a região sacral e o edema em membros inferiores. Considerando a permanência prolongada na cadeira, recomenda uso de almofada comum e elevação das pernas para auxiliar no retorno venoso, protegendo os calcâneos de modo a aliviar pressão, sempre mantendo a cabeceira elevada para evitar desconforto respiratório ocasionado pela ortopneia." },
       { label: "B", text: "Inspeciona a região sacral, observando que a hiperemia não regride após alívio da pressão e orienta uso de almofada que atue na redistribuição de pressão ou alternância de posicionamento na cadeira, mantendo cabeceira elevada para ortopneia, movimentando o paciente de modo a não permanecer na mesma posição por tempo prolongado." },
@@ -243,6 +248,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "O Sr. Manoel (Leito 205) está no 2º DIH com quadro de fratura de fêmur D, está emagrecido e possui uma lesão suspeita de tecido profundo no calcâneo esquerdo com tecido acastanhado escurecido seco e bordas regulares. Além disso, a fratura limita muito sua movimentação.",
     enigmaTitle: "Enigma: Verificar superfície de suporte (\"V\")",
+    enigmaQuestion: "Ao entrar no quarto, você precisa focar em verificar se a superfície de suporte está adequada, ou seja, garantir a escolha e manutenção correta de colchões que ajudam a redistribuir a pressão corporal para proteger esse paciente de alto risco. Quais medidas são essenciais?",
     options: [
       { label: "A", text: "Manter o paciente em colchão hospitalar, mas utilizar uma almofada em formato de \"roda\" ou \"donut\" sob os glúteos e sob os calcâneos para aliviar a pressão no sacro, pés e na fratura. Otimizando a movimentação do paciente a cada 1 hora." },
       { label: "B", text: "Utilizar um colchão que redistribua a pressão, junto ao reposicionamento do paciente. Manter os calcâneos elevados, sem contato direto com o leito. Manter em decúbito lateral em um ângulo de 30º em relação ao leito." },
@@ -290,6 +296,7 @@ export const patients: PatientCase[] = [
     },
     scenario: "Sra. Antônia está com alta programada, mas possui uma lesão de 5 cm na região sacral com tecido de granulação, bordas regulares e não exsudativa, que deve garantir a cicatrização, evitando que seja interrompida e que a dor à mobilização seja controlada. Ela está em ar ambiente, estável e com aceitação favorável da dieta ofertada, o que favorece a cicatrização, mas a umidade da fralda é um fator de risco constante.",
     enigmaTitle: "Enigma: Reposicionamento (\"R\")",
+    enigmaQuestion: "Para realizar um plano de alta para a paciente e incluir os cuidados e manejos do reposicionamento, voltados para nutrição e umidade. Qual das estratégias abaixo compõe o plano de alta mais seguro para a Sra. Antônia?",
     options: [
       { label: "A", text: "Orientar mudanças de decúbito a cada 4 horas durante o período noturno para não prejudicar o sono, priorizando a posição lateral a 90°, com uso de travesseiros." },
       { label: "B", text: "Recomendar reposicionamento conforme tolerância da paciente, priorizando o controle da dor e evitando mudanças frequentes para não comprometer o tecido de granulação." },

@@ -63,6 +63,9 @@ const CaseScreen: React.FC<CaseScreenProps> = ({
         {/* Enigma */}
         <div>
           <h4 className="font-bold text-foreground mb-3">🧩 {patient.enigmaTitle}</h4>
+          <div className="hospital-card border-l-4 border-l-primary mb-4">
+            <p className="text-sm text-foreground">{patient.enigmaQuestion}</p>
+          </div>
           <div className="space-y-3">
             {patient.options.map((option, i) => {
               let cardClass = "option-card";
