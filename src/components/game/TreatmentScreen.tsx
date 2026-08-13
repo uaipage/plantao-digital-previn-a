@@ -8,6 +8,8 @@ import imgAlginatoDeCálcioComPrata from "@/assets/tratamentos/Alginatocomprata.
 import imgCarvaoAtivado from "@/assets/tratamentos/Carvao_ativado.png";
 import imgCarvaoComPrata from "@/assets/tratamentos/Carvao_com_prata.png";
 import imgColagenase from "@/assets/tratamentos/Colagenase.png";
+import imgColchaoPneumatico from "@/assets/tratamentos/colchaopneumatico.png";
+import imgCoxim from "@/assets/tratamentos/Coxim.png";
 import imgFilmeTransparente from "@/assets/tratamentos/Curativo_transparente.png";
 import imgGaze from "@/assets/tratamentos/Gaze.png";
 import imgHidrocoloide from "@/assets/tratamentos/Hidrocoloide.png";
@@ -44,6 +46,8 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "Carvão Ativado": imgCarvaoAtivado,
   "Carvão Ativado com Prata": imgCarvaoComPrata,
   "Colagenase": imgColagenase,
+  "Colchão Pneumático": imgColchaoPneumatico,
+  "Coxim": imgCoxim,
   "Creme Barreira": imgCremeBarreira,
   "Filme Transparente": imgFilmeTransparente,
   "Membrana Polimérica": imgFilmeTransparente,
