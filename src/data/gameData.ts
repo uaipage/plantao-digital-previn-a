@@ -300,6 +300,16 @@ export const LETTER_MAP: Record<number, string[]> = {
   206: ["R"],
 };
 
+export const LETTER_MEANINGS: Record<string, string> = {
+  P: "Posicionamento de dispositivos",
+  R: "Reposicionamento",
+  E: "Evitar umidade",
+  V: "Verificar a superfície de suporte",
+  I: "Inspeção da pele",
+  N: "Nutrição",
+  A: "Avaliação de Risco",
+};
+
 // Correct order: P-R-E-V-I-N-A
 export const PREVINA_ORDER = ["P", "R", "E", "V", "I", "N", "A"];
 

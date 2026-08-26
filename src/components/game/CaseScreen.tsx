@@ -1,5 +1,5 @@
 import React from "react";
-import { PatientCase } from "@/data/gameData";
+import { PatientCase, LETTER_MAP, LETTER_MEANINGS } from "@/data/gameData";
 import { ArrowLeft, CheckCircle2, XCircle, RotateCcw, ArrowRight } from "lucide-react";
 import LetterTracker from "./LetterTracker";
 import SbarSidebar from "./SbarSidebar";
@@ -27,6 +27,8 @@ const CaseScreen: React.FC<CaseScreenProps> = ({
   onRetry,
   onBack,
 }) => {
+  const unlockedLetters = LETTER_MAP[patient.id] || [];
+
   return (
     <div className="p-4 md:p-6 animate-fadeIn">
       <SbarSidebar patient={patient} />
@@ -128,6 +130,19 @@ const CaseScreen: React.FC<CaseScreenProps> = ({
                     ? patient.wrongExplanations[selectedOption]
                     : ""}
                 </p>
+
+                {isCorrect && unlockedLetters.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-border/60">
+                    <h5 className="font-bold text-foreground mb-2">Pistas liberadas</h5>
+                    <ul className="space-y-1">
+                      {unlockedLetters.map((letter) => (
+                        <li key={letter} className="text-sm text-foreground">
+                          <strong>{letter}</strong> — {LETTER_MEANINGS[letter]}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
 
