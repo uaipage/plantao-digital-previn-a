@@ -25,7 +25,6 @@ import imgSoroFisiologico from "@/assets/tratamentos/Soro_fisiologico.png";
 
 import imgJoaquim from "@/assets/pacientes/Joaquim.jpg";
 import imgLucinda from "@/assets/pacientes/Lucinda.png";
-import imgMaria from "@/assets/pacientes/Maria.png";
 import imgOtavio from "@/assets/pacientes/Otavio.png";
 import imgManoel from "@/assets/pacientes/Manoel.png";
 import imgAntonia from "@/assets/pacientes/Antonia.png";
@@ -33,7 +32,6 @@ import imgAntonia from "@/assets/pacientes/Antonia.png";
 const PATIENT_IMAGES: Record<number, string> = {
   201: imgJoaquim,
   202: imgLucinda,
-  203: imgMaria,
   204: imgOtavio,
   205: imgManoel,
   206: imgAntonia,
@@ -69,6 +67,7 @@ interface TreatmentScreenProps {
   isCompleted: boolean;
   showFeedback: boolean;
   isCorrect: boolean;
+  lockedProducts: Set<string>;
   onToggleProduct: (product: string) => void;
   onConfirm: () => void;
   onRetry: () => void;
@@ -81,6 +80,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
   isCompleted,
   showFeedback,
   isCorrect,
+  lockedProducts,
   onToggleProduct,
   onConfirm,
   onRetry,
@@ -112,15 +112,25 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {(patient.productOptions && patient.productOptions.length > 0 ? patient.productOptions : TREATMENT_PRODUCTS).map(product => {
-              const selected = selectedProducts.includes(product);
+              const isLocked = lockedProducts.has(product);
+              const selected = selectedProducts.includes(product) || isLocked;
               const isCorrectProduct = patient.correctTreatments.includes(product);
               const image = PRODUCT_IMAGES[product];
+              const showImmediateCorrect = !showFeedback && selected && isCorrectProduct;
 
               let chipClass = "product-chip flex flex-col items-center gap-2 p-3 h-auto";
-              if (showFeedback && isCorrect) {
+              if (isLocked) {
+                // Já confirmado como correto em uma tentativa anterior: permanece verde e travado
+                chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto cursor-not-allowed";
+              } else if (showImmediateCorrect) {
+                // Feedback imediato: ao clicar em um item correto, ele já fica verde.
+                chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto";
+              } else if (showFeedback && isCorrect) {
                 // Only reveal correct answers when the user got it right
                 if (isCorrectProduct) chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto";
                 else if (selected) chipClass = "product-chip border-destructive/50 bg-destructive/5 flex flex-col items-center gap-2 p-3 h-auto";
+              } else if (showFeedback && !isCorrect && selected) {
+                chipClass = "product-chip border-destructive/50 bg-destructive/5 flex flex-col items-center gap-2 p-3 h-auto";
               } else if (selected) {
                 chipClass = "product-chip product-chip-selected flex flex-col items-center gap-2 p-3 h-auto";
               }
@@ -128,7 +138,8 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
               return (
                 <button
                   key={product}
-                  onClick={() => !isCompleted && onToggleProduct(product)}
+                  onClick={() => !isCompleted && !isLocked && onToggleProduct(product)}
+                  disabled={isLocked}
                   className={chipClass}
                 >
                   {image && (
@@ -139,6 +150,11 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
                     />
                   )}
                   <span className="text-xs text-center leading-tight">{product}</span>
+                  {(isLocked || showImmediateCorrect) && (
+                    <span className="inline-flex items-center gap-1 text-success text-[10px] font-medium">
+                      <CheckCircle2 className="w-3 h-3" /> Acertou
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -177,7 +193,7 @@ const TreatmentScreen: React.FC<TreatmentScreenProps> = ({
                 <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="font-bold text-foreground mb-1">Tratamento Incorreto</p>
-                  <p className="text-foreground">Os produtos selecionados não estão corretos. Revise sua escolha e tente novamente.</p>
+                  <p className="text-foreground">A combinação ainda não está completa. Os produtos em verde já foram confirmados como corretos e continuam selecionados — revise apenas o restante e tente novamente.</p>
                 </div>
               </div>
             </div>

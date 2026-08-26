@@ -22,15 +22,16 @@ const MessageScreen: React.FC<MessageScreenProps> = ({ onNext }) => {
                 Bem-vindo ao Plantão
               </h2>
               <p className="text-foreground leading-relaxed mb-4">
-                Você é o enfermeiro responsável por <strong>6 pacientes de alta complexidade</strong>.
+                Você é o enfermeiro responsável por 5 pacientes de média complexidade.
               </p>
               <p className="text-foreground leading-relaxed mb-4">
-                O sistema de alerta de risco disparou. Se não agirmos agora, teremos LPPs agravadas 
-                ou irreversíveis até o fim do plantão. Para proteger os pacientes e concluir este plantão 
-                com sucesso, você deve coletar todas as pistas.
+                Ao analisar as informações deixadas na passagem de plantão, seu alerta é imediato: há pacientes em risco de desenvolver ou agravar lesões por pressão (LPP). É preciso agir antes que o plantão termine.
               </p>
               <p className="text-foreground leading-relaxed font-semibold">
-                Cada decisão correta libera uma letra da senha final que formará um mnemônico.
+                Sua missão é identificar os riscos, encontrar as pistas e tomar as decisões necessárias para proteger seus pacientes.
+              </p>
+              <p className="text-foreground leading-relaxed font-semibold">
+                Cada decisão correta libera uma letra da senha final. Ao reunir todas as letras, você descobrirá o mnemônico que encerra o desafio.
               </p>
             </div>
           </div>

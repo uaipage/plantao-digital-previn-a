@@ -9,6 +9,7 @@ interface BradenScreenProps {
   isCompleted: boolean;
   showFeedback: boolean;
   isCorrect: boolean;
+  lockedCategories: Set<string>;
   onSetInput: (category: string, score: number) => void;
   onConfirm: () => void;
   onRetry: () => void;
@@ -21,6 +22,7 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
   isCompleted,
   showFeedback,
   isCorrect,
+  lockedCategories,
   onSetInput,
   onConfirm,
   onRetry,
@@ -60,26 +62,36 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
 
         {/* Braden categories */}
         <div className="space-y-3">
-          {BRADEN_CATEGORIES.map(cat => (
+          {BRADEN_CATEGORIES.map(cat => {
+            const isLocked = lockedCategories.has(cat.key);
+            return (
             <div key={cat.key} className="hospital-card">
-              <h4 className="font-semibold text-foreground text-sm mb-2">{cat.name}</h4>
+              <h4 className="font-semibold text-foreground text-sm mb-2 flex items-center gap-2">
+                {cat.name}
+                {isLocked && (
+                  <span className="inline-flex items-center gap-1 text-success text-xs font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Acertou
+                  </span>
+                )}
+              </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {cat.levels.map(level => {
                   const selected = inputs[cat.key] === level.score;
                   const isCorrectAnswer = level.score === patient.braden[cat.key];
-                  const showCorrect = showFeedback && selected && isCorrectAnswer;
-                  const showWrong = showFeedback && selected && !isCorrectAnswer;
+                  const showCorrect = (showFeedback || isLocked) && selected && isCorrectAnswer;
+                  const showWrong = showFeedback && !isLocked && selected && !isCorrectAnswer;
 
                   return (
                     <button
                       key={level.score}
-                      onClick={() => !showFeedback && onSetInput(cat.key, level.score)}
+                      onClick={() => !showFeedback && !isLocked && onSetInput(cat.key, level.score)}
+                      disabled={isLocked}
                       className={`text-left p-2 rounded-lg border text-xs transition-colors ${
                         showCorrect ? "border-success bg-success/10" :
                         showWrong ? "border-destructive bg-destructive/10" :
                         selected ? "border-primary bg-primary/10" :
                         "border-border hover:border-primary/40"
-                      }`}
+                      } ${isLocked ? "cursor-not-allowed opacity-90" : ""}`}
                     >
                       <div className="font-semibold">{level.score} — {level.label}</div>
                       <div className="text-muted-foreground mt-0.5">{level.desc}</div>
@@ -88,7 +100,8 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
                 })}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Total */}
@@ -137,7 +150,7 @@ const BradenScreen: React.FC<BradenScreenProps> = ({
                 <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="font-bold text-foreground mb-1">Avaliação Incorreta</p>
-                  <p className="text-foreground">Alguns valores da Escala de Braden estão incorretos. Revise as categorias marcadas em vermelho e tente novamente.</p>
+                  <p className="text-foreground">Algumas categorias estão incorretas. As marcadas em verde já foram salvas corretamente — revise apenas as categorias em vermelho e tente novamente.</p>
                 </div>
               </div>
             </div>

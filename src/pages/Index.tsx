@@ -9,6 +9,7 @@ import CaseScreen from "@/components/game/CaseScreen";
 import VaultScreen from "@/components/game/VaultScreen";
 import BradenScreen from "@/components/game/BradenScreen";
 import TreatmentScreen from "@/components/game/TreatmentScreen";
+import Phase2WordScreen from "@/components/game/Phase2WordScreen";
 import Phase2TransitionScreen from "@/components/game/Phase2TransitionScreen";
 import Phase3TransitionScreen from "@/components/game/Phase3TransitionScreen";
 import FinalChallengeScreen from "@/components/game/FinalChallengeScreen";
@@ -31,6 +32,8 @@ const Index = () => {
     confirmPhase3,
     retryPhase3,
     setPhase,
+    setPhase2WordInput,
+    checkPhase2Word,
   } = useGameState();
 
   const currentPatient = patients.find(p => p.id === state.currentPatientId);
@@ -90,7 +93,20 @@ const Index = () => {
             onInputChange={setVaultInput}
             onCheck={checkVault}
             onBack={() => goTo("dashboard")}
-            onContinuePhase2={() => {
+            onContinuePhase2={() => goTo("phase2-word")}
+          />
+        );
+
+      case "phase2-word":
+        return (
+          <Phase2WordScreen
+            wordInput={state.phase2WordInput}
+            wordChecked={state.phase2WordChecked}
+            wordCorrect={state.phase2WordCorrect}
+            onInputChange={setPhase2WordInput}
+            onCheck={checkPhase2Word}
+            onBack={() => goTo("vault")}
+            onContinue={() => {
               setPhase(2);
               goTo("dashboard");
             }}
@@ -106,6 +122,7 @@ const Index = () => {
             isCompleted={state.phase2Completed.has(currentPatient.id)}
             showFeedback={state.phase2ShowFeedback[currentPatient.id] || false}
             isCorrect={state.phase2IsCorrect[currentPatient.id] || false}
+            lockedCategories={state.phase2LockedFields[currentPatient.id] || new Set()}
             onSetInput={(cat, score) => setBradenInput(currentPatient.id, cat, score)}
             onConfirm={() => confirmBraden(currentPatient.id)}
             onRetry={() => retryBraden(currentPatient.id)}
@@ -142,6 +159,7 @@ const Index = () => {
             isCompleted={state.phase3Completed.has(currentPatient.id)}
             showFeedback={state.phase3ShowFeedback[currentPatient.id] || false}
             isCorrect={state.phase3IsCorrect[currentPatient.id] || false}
+            lockedProducts={state.phase3LockedProducts[currentPatient.id] || new Set()}
             onToggleProduct={(p) => togglePhase3Product(currentPatient.id, p)}
             onConfirm={() => confirmPhase3(currentPatient.id)}
             onRetry={() => retryPhase3(currentPatient.id)}

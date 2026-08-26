@@ -32,9 +32,9 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
   onSelectPhase3Patient,
   onGoToFinalChallenge,
 }) => {
-  const allPhase1Done = completedPatients.size === 6;
-  const allPhase2Done = phase2Completed.size === 6;
-  const allPhase3Done = phase3Completed.size === 6;
+  const allPhase1Done = completedPatients.size === patients.length;
+  const allPhase2Done = phase2Completed.size === patients.length;
+  const allPhase3Done = phase3Completed.size === patients.length;
   const completedCount = phase === 1 ? completedPatients.size
     : phase === 2 ? phase2Completed.size
     : phase3Completed.size;
@@ -85,10 +85,10 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({
       <div className="mb-6">
         <div className="flex justify-between text-sm text-muted-foreground mb-1">
           <span>Pacientes avaliados</span>
-          <span>{completedCount} / 6</span>
+          <span>{completedCount} / {patients.length}</span>
         </div>
         <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${(completedCount / 6) * 100}%` }} />
+          <div className="progress-fill" style={{ width: `${(completedCount / patients.length) * 100}%` }} />
         </div>
       </div>
 

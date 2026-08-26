@@ -23,15 +23,19 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onNext }) => {
 
         <div className="hospital-card">
           <p className="text-foreground leading-relaxed text-base">
-            É o seu primeiro dia no novo e reluzente emprego, e a empolgação não poderia ser maior. 
-            Você chega ao hospital muito feliz, mas, ao atravessar a porta da enfermaria da Unidade 
-            de Clínica Médica, já encontra a enfermeira do plantão, apressada, segurando sua 
-            bolsa, te esperando…
+            É o seu primeiro dia no novo emprego, e a empolgação não poderia ser maior. Você chega ao hospital animado para começar essa nova etapa mas, assim que atravessa a porta da enfermaria da Unidade de Clínica Médica, percebe que o plantão já começou um pouco diferente...
           </p>
           <p className="text-foreground leading-relaxed text-base mt-4">
-            Você se aproxima e ela mostra um laptop ligado, e ela diz que deixou a passagem de 
-            plantão com tudo anotado, mas que precisa sair mais cedo para uma consulta médica e 
-            que você pode telefonar caso tenha alguma dúvida…
+            A enfermeira responsável pelo turno anterior está à sua espera, apressada e já com a bolsa nas mãos. Ela explica que precisa sair mais cedo para uma consulta médica e, antes de ir, mostra um laptop aberto e avisa:
+          </p>
+          <p className="text-foreground leading-relaxed text-base mt-4 italic">
+            — Deixei toda a passagem de plantão registrada aqui. Preciso ir agora, mas, se tiver alguma dúvida, pode me ligar.
+          </p>
+          <p className="text-foreground leading-relaxed text-base mt-4">
+            E, antes que você consiga perguntar qualquer coisa, ela se despede e vai embora.
+          </p>
+          <p className="text-foreground leading-relaxed text-base mt-4 font-semibold text-primary">
+            Agora, o plantão está em suas mãos!!!
           </p>
         </div>
 

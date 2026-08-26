@@ -54,13 +54,16 @@ const VaultScreen: React.FC<VaultScreenProps> = ({
           <>
             <div>
               <p className="text-foreground mb-4">
-                Você reuniu todas as pistas. A supervisora de enfermagem pergunta:
+                Você concluiu sua primeira visita aos pacientes e reuniu todas as pistas. Agora, é hora de transformar sua avaliação em cuidado. A supervisora de enfermagem se aproxima e pergunta:
               </p>
               <p className="text-foreground font-semibold italic mb-6">
-                "Enfermeiro(a), qual foi a sua estratégia para proteger esses pacientes contra lesões hoje?"
+                "Enfermeiro(a), você identificou os riscos e as necessidades dos seus pacientes. Qual estratégia guiará suas ações para prevenir lesões por pressão ao longo deste plantão?"
               </p>
-              <p className="text-muted-foreground text-sm">
-                Dica: A ordem das letras segue a lógica de prevenção completa (O acrônimo ensinado).
+              <p className="text-foreground mb-4">
+                Organize as letras que você conquistou e descubra o acrônimo que reúne as principais medidas para prevenção de LPP. Cada letra representa um cuidado que você identificou durante a visita. Coloque-as na ordem correta para revelar a estratégia que deverá ser implementada durante o plantão.
+              </p>
+              <p className="text-muted-foreground text-sm font-semibold">
+                Organize as pistas. O plantão está só começando.
               </p>
             </div>
 
@@ -108,7 +111,7 @@ const VaultScreen: React.FC<VaultScreenProps> = ({
           <div className="space-y-6">
             <PartyPopper className="w-16 h-16 text-accent mx-auto" />
             <h2 className="text-2xl font-bold text-foreground">
-              🎉 Parabéns! Plantão concluído com sucesso!
+              Parabéns!! Processo de enfermagem em andamento!!!
             </h2>
             <p className="text-foreground">
               Você demonstrou conhecimento na prevenção de Lesões por Pressão. 
@@ -125,7 +128,7 @@ const VaultScreen: React.FC<VaultScreenProps> = ({
               <p className="text-sm"><strong>A</strong> — Avaliação de risco</p>
             </div>
             <button onClick={onContinuePhase2} className="hospital-btn-primary">
-              Continuar para Fase 2 — Escala de Braden
+              Continuar para Fase 2
             </button>
           </div>
         )}
